@@ -1,9 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="text-sdk-java:jar">
-    <output-path>$PROJECT_DIR$/.idea/artifacts</output-path>
-    <root id="archive" name="text-sdk-java.jar">
-      <element id="module-output" name="text-sdk-java" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar" path-in-jar="/" />
-    </root>
-  </artifact>
-</component>
