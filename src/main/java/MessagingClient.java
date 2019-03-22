@@ -20,7 +20,7 @@ public class MessagingClient {
     public void sendTextMessage(String messageText, String from,String[] to){
 
         try{
-            MessageBuilder builder = new MessageBuilder("Message Text", "Souff", new String[] {"0614134569"});
+            MessageBuilder builder = new MessageBuilder(messageText,from, to);
 
             Message message = builder.Build();
 
