@@ -26,7 +26,7 @@ By calling `SendTextMessage` and providing message text, sender name, recipient 
 
 
 ## Sending a rich message
-By using the `MessageBuilder` it is possible to create images with media for channels such as WhatsApp and RCS
+By using the `MessageBuilder` it is possible to create images with media for channels such as WhatsApp and Viber
 ```cs
  MessagingClient client = new MessagingClient("YourProductToken");
 
