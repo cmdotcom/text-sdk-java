@@ -1,3 +1,5 @@
+[![Build Status](https://dev.azure.com/cmdotcom/text-sdk-java/_apis/build/status/cmdotcom.text-sdk-java?branchName=master)](https://dev.azure.com/cmdotcom/text-sdk-java/_build/latest?definitionId=1&branchName=master)
+
 ## @cmdotcom/text-sdk: A helper library to send messages.
 
 Want to send messages in your Java application? Then you are at the right place.
