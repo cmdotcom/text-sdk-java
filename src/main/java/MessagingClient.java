@@ -1,51 +1,53 @@
 import com.google.gson.Gson;
-import models.Channel;
 import models.Message;
 import models.Request;
 
+import models.Response;
 import utils.HttpHelper;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MessagingClient {
 
     private String productToken;
+    private static Gson gson;
 
-    public MessagingClient(String productToken){
+    public MessagingClient(String productToken) {
         this.productToken = productToken;
+        gson = new Gson();
     }
 
 
-    public void sendTextMessage(String messageText, String from,String[] to){
+    public Response.HttpResponseBody sendTextMessage(String messageText, String from, String[] to) {
 
-        try{
-            MessageBuilder builder = new MessageBuilder(messageText,from, to);
+        try {
+            MessageBuilder builder = new MessageBuilder(messageText, from, to);
 
             Message message = builder.Build();
 
             String body = GetHttpPostBody(productToken, message);
 
-            HttpHelper.post(Config.ApiUrl, body);
-        }
+            String result = HttpHelper.post(Config.ApiUrl, body);
 
-        catch (Exception e){
+            return getResponseBody(result);
+
+        } catch (Exception e) {
             System.out.println("Please check your request body.");
+            throw e;
         }
     }
 
 
-    public void sendMessage(Message message) {
+    public Response.HttpResponseBody sendMessage(Message message) {
 
-    try{
-          String body = GetHttpPostBody(productToken, message);
+        try {
+            String body = GetHttpPostBody(productToken, message);
 
-          HttpHelper.post(Config.ApiUrl, body);
+            String result = HttpHelper.post(Config.ApiUrl, body);
+
+            return getResponseBody(result);
+        } catch (Exception e) {
+            System.out.println("Please check your request body.");
+            throw e;
         }
-
-        catch (Exception e ){
-      System.out.println("Please check your request body.");
-    }
     }
 
 
@@ -55,15 +57,26 @@ public class MessagingClient {
     /// <param name="apiKey">The API key.</param>
     /// <param name="message">The message to send.</param>
     /// <returns></returns>
-    protected static String GetHttpPostBody(String productToken, Message message)
-    {
+    protected static Response.HttpResponseBody getResponseBody(String body) {
+        Response.HttpResponseBody result = gson.fromJson(body, Response.HttpResponseBody.class);
+        return result;
+    }
+
+
+    /// <summary>
+    ///     Gets the HTTP post body.
+    /// </summary>
+    /// <param name="apiKey">The API key.</param>
+    /// <param name="message">The message to send.</param>
+    /// <returns></returns>
+    protected static String GetHttpPostBody(String productToken, Message message) {
         Request.Messages messages = new Request.Messages();
         Request.MessagesEnvelope request = new Request.MessagesEnvelope();
         request.setAuthentication(new Request.Authentication(productToken));
         Message[] msg = new Message[]{message};
         request.setMessages(msg);
         messages.setMessages(request);
-        return new Gson().toJson(messages);
+        return gson.toJson(messages);
     }
 
 }
