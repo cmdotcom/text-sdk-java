@@ -8,11 +8,10 @@ import utils.HttpHelper;
 public class MessagingClient {
 
     private String productToken;
-    private static Gson gson;
+
 
     public MessagingClient(String productToken) {
         this.productToken = productToken;
-        gson = new Gson();
     }
 
 
@@ -58,7 +57,7 @@ public class MessagingClient {
     /// <param name="message">The message to send.</param>
     /// <returns></returns>
     protected static Response.HttpResponseBody getResponseBody(String body) {
-        Response.HttpResponseBody result = gson.fromJson(body, Response.HttpResponseBody.class);
+        Response.HttpResponseBody result = new Gson().fromJson(body, Response.HttpResponseBody.class);
         return result;
     }
 
@@ -76,7 +75,7 @@ public class MessagingClient {
         Message[] msg = new Message[]{message};
         request.setMessages(msg);
         messages.setMessages(request);
-        return gson.toJson(messages);
+        return new Gson().toJson(messages);
     }
 
 }
