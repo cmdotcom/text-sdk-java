@@ -20,7 +20,6 @@ public class HttpHelper {
 
             con.setRequestProperty("Content-Type", "application/json");
 
-            System.out.println(data);
 
             if (data != null) {
                 // Send request
