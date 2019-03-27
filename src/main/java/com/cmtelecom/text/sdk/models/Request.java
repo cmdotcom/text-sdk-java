@@ -1,4 +1,4 @@
-package models;
+package com.cmtelecom.text.sdk.models;
 
 import com.google.gson.annotations.SerializedName;
 

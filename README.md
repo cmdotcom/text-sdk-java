@@ -46,3 +46,21 @@ By using the `MessageBuilder` it is possible to create images with media for cha
 
        client.sendMessage(message);
 ```
+
+## Get the result
+Sending an message returns the response body
+```cs
+{
+	"details": "Created 1 message(s)",
+	"errorCode": 0,
+	"messages": [{
+		"to": "00316012345678",
+		"status": "Accepted",
+		"reference": null,
+		"parts": 1,
+		"messageDetails": null,
+		"messageErrorCode": 0
+	}]
+}
+```
+

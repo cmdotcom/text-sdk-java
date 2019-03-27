@@ -1,4 +1,4 @@
-package models.multichannel;
+package com.cmtelecom.text.sdk.models.multichannel;
 
 public class MediaContent {
     /// <summary>

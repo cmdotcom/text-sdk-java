@@ -1,13 +1,14 @@
-import models.Body;
-import models.Channel;
-import models.Message;
-import models.Recipient;
-import models.multichannel.IRichMessage;
-import models.multichannel.RichContent;
-import models.multichannel.Suggestion;
+package com.cmtelecom.text.sdk;
+
+import com.cmtelecom.text.sdk.models.Body;
+import com.cmtelecom.text.sdk.models.Channel;
+import com.cmtelecom.text.sdk.models.Message;
+import com.cmtelecom.text.sdk.models.Recipient;
+import com.cmtelecom.text.sdk.models.multichannel.IRichMessage;
+import com.cmtelecom.text.sdk.models.multichannel.RichContent;
+import com.cmtelecom.text.sdk.models.multichannel.Suggestion;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class MessageBuilder {

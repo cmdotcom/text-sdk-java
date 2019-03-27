@@ -1,4 +1,4 @@
-package models;
+package com.cmtelecom.text.sdk.models;
 
 
 
