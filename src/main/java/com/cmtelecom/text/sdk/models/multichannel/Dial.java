@@ -1,4 +1,4 @@
-package models.multichannel;
+package com.cmtelecom.text.sdk.models.multichannel;
 
 import com.google.gson.annotations.SerializedName;
 

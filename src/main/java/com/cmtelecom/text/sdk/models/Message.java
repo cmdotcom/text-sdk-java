@@ -1,4 +1,4 @@
-package models;
+package com.cmtelecom.text.sdk.models;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -113,7 +113,7 @@ public class Message {
     public String Reference;
 
 
-    public models.multichannel.RichContent RichContent;
+    public com.cmtelecom.text.sdk.models.multichannel.RichContent RichContent;
 
 
     public Message(Body body, String from, List<Recipient> recipientList) {
