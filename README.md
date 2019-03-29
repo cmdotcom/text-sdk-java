@@ -7,8 +7,11 @@ If you want to get all the functionalities, go to: [CM.com API Docs](https://doc
 
 
 ## Installing
+Add the GSon dependency to your project: https://mvnrepository.com/artifact/com.google.code.gson/gson/2.8.5
 
-Add the jar file to your project.
+[![Build Status](https://dev.azure.com/cmdotcom/text-sdk-java/_apis/build/status/cmdotcom.text-sdk-java?branchName=master)](https://dev.azure.com/cmdotcom/text-sdk-java/_build/latest?definitionId=1&branchName=master)
+Download our Jar file and add it to your project. 
+
 
 ## Instantiate the client
 Use your productToken which authorizes you on the CM platform. Get yours on CM.com
