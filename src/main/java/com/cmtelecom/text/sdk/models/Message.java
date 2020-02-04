@@ -33,7 +33,7 @@ public class Message {
     ///     Please contact support in case you would like to exceed this number.
     /// </summary>
     @SerializedName("customGrouping")
-    public String CustomGrouping;
+    public String CustomGrouping = "text-sdk-java";
 
     /// <summary>
     ///     The custom grouping2 field, like <see cref="CustomGrouping" /> is an optional field that can be used to tag
@@ -112,7 +112,7 @@ public class Message {
     @SerializedName("reference")
     public String Reference;
 
-
+    @SerializedName("richContent")
     public com.cmtelecom.text.sdk.models.multichannel.RichContent RichContent;
 
 

@@ -7,6 +7,9 @@ import com.cmtelecom.text.sdk.models.Recipient;
 import com.cmtelecom.text.sdk.models.multichannel.IRichMessage;
 import com.cmtelecom.text.sdk.models.multichannel.RichContent;
 import com.cmtelecom.text.sdk.models.multichannel.Suggestion;
+import com.cmtelecom.text.sdk.models.templates.TemplateMessage;
+import com.cmtelecom.text.sdk.models.templates.TemplateMessageContent;
+import com.cmtelecom.text.sdk.models.templates.WhatsAppTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -104,5 +107,14 @@ public class MessageBuilder {
         this.richContent.Suggestions = suggestions;
         return this;
     }
-
+    
+    public MessageBuilder WithTemplate(TemplateMessage template){
+        if (this.richContent == null)
+            this.richContent = new RichContent();
+            
+        System.out.println(template.Content.WhatsAppTemplate.Name);
+           
+        this.richContent.AddConversationPart(template);
+        return this;
+    }
 }
