@@ -69,6 +69,8 @@ Sending an message returns the response body
 
 ## Send whatsApp template messages using the message builder please check our docs to see more information about whatsApp templates: https://docs.cmtelecom.com/en/api/business-messaging-api/1.0/index#whatsapp-template-message
 ```cs
+		 
+   		  
 		  MessagingClient client = new MessagingClient("YourProductToken");
 
           MessageBuilder builder = new MessageBuilder("Template Test", "CM.COM", new String[] {"0031636170815"});
