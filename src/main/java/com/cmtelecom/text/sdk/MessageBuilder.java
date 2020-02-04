@@ -110,9 +110,7 @@ public class MessageBuilder {
     
     public MessageBuilder WithTemplate(TemplateMessage template){
         if (this.richContent == null)
-            this.richContent = new RichContent();
-            
-        System.out.println(template.Content.WhatsAppTemplate.Name);
+            this.richContent = new RichContent();           
            
         this.richContent.AddConversationPart(template);
         return this;

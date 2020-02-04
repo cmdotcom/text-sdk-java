@@ -70,39 +70,35 @@ Sending an message returns the response body
 ## Send whatsApp template messages using the message builder please check our docs to see more information about whatsApp templates: https://docs.cmtelecom.com/en/api/business-messaging-api/1.0/index#whatsapp-template-message
 ```cs
 		 
-   		  
-		  MessagingClient client = new MessagingClient("YourProductToken");
+MessagingClient client = new MessagingClient("YourProductToken");
+ 
+ MessageBuilder builder = new MessageBuilder("Template Test", "CM.COM", new String[] {"0031636170815"});
 
-          MessageBuilder builder = new MessageBuilder("Template Test", "CM.COM", new String[] {"0031636170815"});
-
-          builder.WithAllowedChannels(new Channel[] {Channel.WhatsApp});       
+ builder.WithAllowedChannels(new Channel[] {Channel.WhatsApp});       
            
-          TemplateMessage template = new TemplateMessage();
+		TemplateMessage template = new TemplateMessage();
           
-          template.Content = new TemplateMessageContent();
+        template.Content = new TemplateMessageContent();
           
-          template.Content.WhatsAppTemplate = new WhatsAppTemplate();
-          template.Content.WhatsAppTemplate.Name = "template-name";
-          template.Content.WhatsAppTemplate.Namespace = "the-namespace-of-template";
-          template.Content.WhatsAppTemplate.Language =  new TemplateLanguage("CountryCode", "deterministic");
-          template.Content.WhatsAppTemplate.LocalizableParams = new LocalizableParam[] {};
-          template.Content.WhatsAppTemplate.Components = new TemplateComponents[] {new TemplateComponents("header", 
-                         new TemplateParameters[] { new TemplateParameters("image",  new MediaContent("cm.com"", 
-                                 "https://avatars3.githubusercontent.com/u/8234794?s=200&v=4", 
-                                  "image/png"))}),
-                  new TemplateComponents("body", 
+        template.Content.WhatsAppTemplate = new WhatsAppTemplate();
+        template.Content.WhatsAppTemplate.Name = "template-name";
+        template.Content.WhatsAppTemplate.Namespace = "the-namespace-of-template";
+        template.Content.WhatsAppTemplate.Language =  new TemplateLanguage("CountryCode", "deterministic");
+        template.Content.WhatsAppTemplate.LocalizableParams = new LocalizableParam[] {};
+        template.Content.WhatsAppTemplate.Components = new TemplateComponents[] {new TemplateComponents("header", 
+        new TemplateParameters[] { new TemplateParameters("image",  new MediaContent("cm.com"", 
+								"https://avatars3.githubusercontent.com/u/8234794?s=200&v=4", 
+								"image/png"))}),
+        new TemplateComponents("body", 
                           new TemplateParameters[] { new TemplateParameters("text",  "TestMessage"), 
-                          new TemplateParameters("text",  "Dutch GP")})
-                  };  
+                          new TemplateParameters("text",  "Dutch GP")})};  
          
                                    
-          builder.WithTemplate(template);
+		builder.WithTemplate(template);
 
-          Message message = builder.Build();
+		Message message = builder.Build();
           
-		  client.sendMessage(message); 
-
-
+		client.sendMessage(message); 
 ```
 
 

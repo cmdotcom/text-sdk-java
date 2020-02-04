@@ -22,8 +22,7 @@ public class HttpHelper {
             
             if ( data != null ) {
                 // Send request
-                System.out.println(data);
-                
+                           
                 conn.setDoOutput( true );
                 try ( DataOutputStream wr = new DataOutputStream( conn.getOutputStream() ) ) {
                     wr.writeBytes( data );
