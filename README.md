@@ -72,9 +72,9 @@ Sending an message returns the response body
 		 
 MessagingClient client = new MessagingClient("YourProductToken");
  
- MessageBuilder builder = new MessageBuilder("Template Test", "CM.COM", new String[] {"0031636170815"});
+MessageBuilder builder = new MessageBuilder("Template Test", "CM.COM", new String[] {"0031636170815"});
 
- builder.WithAllowedChannels(new Channel[] {Channel.WhatsApp});       
+builder.WithAllowedChannels(new Channel[] {Channel.WhatsApp});       
            
 		TemplateMessage template = new TemplateMessage();
           
@@ -94,11 +94,11 @@ MessagingClient client = new MessagingClient("YourProductToken");
                           new TemplateParameters("text",  "Dutch GP")})};  
          
                                    
-		builder.WithTemplate(template);
+builder.WithTemplate(template);
 
-		Message message = builder.Build();
+Message message = builder.Build();
           
-		client.sendMessage(message); 
+client.sendMessage(message); 
 ```
 
 
