@@ -2,7 +2,8 @@ package com.cmtelecom.text.sdk.models.templates;
 
 import com.google.gson.annotations.SerializedName;
 
-public  class TemplateMessageContent {
+public class TemplateMessageContent {
+
     /// <summary>
     /// The WhatsApp template message
     /// </summary>
@@ -11,21 +12,19 @@ public  class TemplateMessageContent {
     /// </remarks>
     @SerializedName("whatsapp")
     public WhatsAppTemplate WhatsAppTemplate;
-    
+
     /// <summary>
     ///  Default constructor
     /// </summary>
-    public TemplateMessageContent()
-    {
-    
+    public TemplateMessageContent() {
+
     }
-    
+
     /// <summary>
     ///  Constructor which sets values
     /// </summary>
     /// <param name="WhatsAppTemplate"></param>
-    public TemplateMessageContent(WhatsAppTemplate WhatsAppTemplate)
-    {
+    public TemplateMessageContent(WhatsAppTemplate WhatsAppTemplate) {
         this.WhatsAppTemplate = WhatsAppTemplate;
     }
 }

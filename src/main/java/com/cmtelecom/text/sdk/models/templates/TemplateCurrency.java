@@ -3,6 +3,7 @@ package com.cmtelecom.text.sdk.models.templates;
 import com.google.gson.annotations.SerializedName;
 
 public class TemplateCurrency {
+
     /// <summary>
     /// Currency code, for example USD or EUR
     /// </summary>
