@@ -91,7 +91,7 @@ builder.WithAllowedChannels(new Channel[] {Channel.WhatsApp});
 								"image/png"))}),
         new TemplateComponents("body", 
                           new TemplateParameters[] { new TemplateParameters("text",  "TestMessage"), 
-                          new TemplateParameters("text",  "Dutch GP")})};  
+                          new TemplateParameters("text",  "CM.Com")})};  
          
                                    
 builder.WithTemplate(template);
