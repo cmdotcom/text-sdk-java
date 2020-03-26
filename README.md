@@ -38,7 +38,7 @@ see our API docs for more info https://docs.cmtelecom.com/en/api/business-messag
 
 ```cs
  MessagingClient client = new MessagingClient("YourProductToken");
- MessageBuilder builder = new MessageBuilder("Message Text", "auto",  "TestSender", new String[] {"0031636170815"});
+ MessageBuilder builder = new MessageBuilder("Message Text", "auto",  "TestSender", new String[] {"00316012345678"});
       
       Message message = builder.Build();
 
