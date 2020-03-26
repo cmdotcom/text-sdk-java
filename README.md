@@ -28,7 +28,22 @@ By calling `SendTextMessage` and providing message text, sender name, recipient 
       client.sendTextMessage("Message Text", "TestSender", new String[] {"00316012345678"});
    
 ```
+## Sending a message with auto detect encoding
+By using the `MessageBuilder` it is possible to send messages with auto detect encoding, 
 
+It is possible to let our gateway detect the encoding for you by including the type: auto setting. 
+In case it detects characters that are not part of the GSM character set, the message will be delivered as Unicode.
+
+see our API docs for more info https://docs.cmtelecom.com/en/api/business-messaging-api/1.0/index/
+
+```cs
+ MessagingClient client = new MessagingClient("YourProductToken");
+ MessageBuilder builder = new MessageBuilder("Message Text", "auto",  "TestSender", new String[] {"00316012345678"});
+      
+      Message message = builder.Build();
+
+      client.sendMessage(message);
+```
 
 ## Sending a rich message
 By using the `MessageBuilder` it is possible to create images with media for channels such as WhatsApp and Viber
@@ -72,9 +87,9 @@ Sending an message returns the response body
 		 
 MessagingClient client = new MessagingClient("YourProductToken");
  
-MessageBuilder builder = new MessageBuilder("Template Test", "CM.COM", new String[] {"0031636170815"});
+ MessageBuilder builder = new MessageBuilder("Template Test", "CM.COM", new String[] {"0031636170815"});
 
-builder.WithAllowedChannels(new Channel[] {Channel.WhatsApp});       
+ builder.WithAllowedChannels(new Channel[] {Channel.WhatsApp});       
            
 		TemplateMessage template = new TemplateMessage();
           
@@ -91,14 +106,14 @@ builder.WithAllowedChannels(new Channel[] {Channel.WhatsApp});
 								"image/png"))}),
         new TemplateComponents("body", 
                           new TemplateParameters[] { new TemplateParameters("text",  "TestMessage"), 
-                          new TemplateParameters("text",  "CM.Com")})};  
+                          new TemplateParameters("text",  "Dutch GP")})};  
          
                                    
-builder.WithTemplate(template);
+		builder.WithTemplate(template);
 
-Message message = builder.Build();
+		Message message = builder.Build();
           
-client.sendMessage(message); 
+		client.sendMessage(message); 
 ```
 
 
