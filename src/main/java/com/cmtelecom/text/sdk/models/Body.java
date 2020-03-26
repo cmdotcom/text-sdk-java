@@ -35,4 +35,9 @@ public class Body {
     public Body(String content) {
         this.Content = content;
     }
+    
+     public Body(String content, String type) {
+        this.Content = content;
+        this.Type = type;
+    }
 }

@@ -37,9 +37,26 @@ public class MessageBuilder {
         }
 
         this.message = new Message(new Body(messageText), from, recipientList);
-
     }
 
+    /// <summary>
+    ///  Creates a new MessageBuilder with auto detect encoding
+    /// </summary>
+    /// <param name="messageText"></param>
+    /// <param name="from"></param>
+    /// <param name="to"></param>
+     public MessageBuilder(String messageText,  String type, String from,String[] to)
+    {
+        List<Recipient> recipientList = new ArrayList<>();
+        for (String number : to) {
+            Recipient r = new Recipient();
+            r.Number = number;
+            recipientList.add(r);
+
+        }
+
+        this.message = new Message(new Body(messageText, type), from, recipientList);
+    }
 
     /// <summary>
     ///     Constructs the message.
