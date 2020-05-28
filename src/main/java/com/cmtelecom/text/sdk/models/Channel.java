@@ -63,7 +63,7 @@ public enum  Channel {
     Line,
 
     /// <summary>
-    ///     Messages will be sent over Line.
+    ///     Messages will be sent over Twitter.
     /// </summary>
     /// <remarks>
     ///     Note that CM needs to configure this for you to work.
