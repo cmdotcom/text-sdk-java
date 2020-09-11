@@ -137,8 +137,8 @@ public class Message {
     ///     30m
     ///     You can set the validity in either hours or minutes. A combination of both is not supported.
     /// </summary>
-        @SerializedName("validity")
-        public String Validity;
+    @SerializedName("validity")
+    public String Validity;
 
 
     public Message(Body body, String from, List<Recipient> recipientList) {
