@@ -1,10 +1,10 @@
 package com.cmtelecom.text.sdk.utils;
-
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 
 public class HttpHelper {
     private static String sendRequest( String method, String url, String data ) {
@@ -19,13 +19,11 @@ public class HttpHelper {
             
             conn.setRequestProperty( "Content-Type", "application/json" );
             
-            
             if ( data != null ) {
-                // Send request
-                           
+                // Send request    
                 conn.setDoOutput( true );
                 try ( DataOutputStream wr = new DataOutputStream( conn.getOutputStream() ) ) {
-                    wr.writeBytes( data );
+                    wr.write( data.getBytes(StandardCharsets.UTF_8) );
                 }
             }
             
@@ -40,8 +38,6 @@ public class HttpHelper {
             System.out.println(response.toString());
 
             return response.toString();
-
-
         }
         catch ( Exception e ) {
             throw new RuntimeException( String.format( "Error sending request to url: %s with data: %s", url, data ), e );
@@ -57,5 +53,4 @@ public class HttpHelper {
     public static String post( String url, String urlParameters ) {
         return sendRequest( "POST", url, urlParameters );
     }
-    
 }
