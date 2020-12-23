@@ -68,7 +68,7 @@ public enum  Channel {
     /// <remarks>
     ///     Note that CM needs to configure this for you to work.
     /// </remarks>
-    Twitter
+    Twitter,
 
     /// <summary>
     ///     Messages will be sent over MobilePush.
