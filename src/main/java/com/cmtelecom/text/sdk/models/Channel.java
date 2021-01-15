@@ -68,5 +68,14 @@ public enum  Channel {
     /// <remarks>
     ///     Note that CM needs to configure this for you to work.
     /// </remarks>
-    Twitter
+    Twitter,
+
+    /// <summary>
+    ///     Messages will be sent over MobilePush.
+    /// </summary>
+    /// <remarks>
+    ///     This channel is the successor of the "Push" channel.
+    ///     Contact CM for information on how to migrate your current Push integration
+    /// </remarks>
+    MobilePush
 }
