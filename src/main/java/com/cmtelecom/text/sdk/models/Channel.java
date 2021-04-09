@@ -1,5 +1,7 @@
 package com.cmtelecom.text.sdk.models;
 
+import com.google.gson.annotations.SerializedName;
+
 public enum  Channel {
     /// <summary>
     ///     Messages will be sent as SMS text messages
