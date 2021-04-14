@@ -1,5 +1,7 @@
 package com.cmtelecom.text.sdk.models;
 
+import com.google.gson.annotations.SerializedName;
+
 public enum  Channel {
     /// <summary>
     ///     Messages will be sent as SMS text messages
@@ -77,5 +79,23 @@ public enum  Channel {
     ///     This channel is the successor of the "Push" channel.
     ///     Contact CM for information on how to migrate your current Push integration
     /// </remarks>
-    MobilePush
+    MobilePush,
+
+    /// <summary>
+    ///     Messages will be sent over Facebook Messenger.
+    /// </summary>
+    /// <remarks>
+    ///     Note that CM needs to configure this for you to work.
+    /// </remarks>
+    @SerializedName("Facebook Messenger")
+    FacebookMessenger,
+
+    /// <summary>
+    ///     Messages will be sent over Google Business Messages.
+    /// </summary>
+    /// <remarks>
+    ///     Note that CM needs to configure this for you to work.
+    /// </remarks>
+    @SerializedName("Google Business Messages")
+    GoogleBusinessMessages
 }
