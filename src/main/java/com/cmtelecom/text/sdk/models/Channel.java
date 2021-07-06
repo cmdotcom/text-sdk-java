@@ -97,5 +97,13 @@ public enum  Channel {
     ///     Note that CM needs to configure this for you to work.
     /// </remarks>
     @SerializedName("Google Business Messages")
-    GoogleBusinessMessages
+    GoogleBusinessMessages,
+
+        /// <summary>
+    ///     Messages will be sent over Instagram.
+    /// </summary>
+    /// <remarks>
+    ///     Note that CM needs to configure this for you to work.
+    /// </remarks>
+    Instagram
 }
