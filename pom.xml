@@ -20,18 +20,10 @@
         </plugins>
     </build>
 
-    <name>Text-sdk-Java</name>
+    <name>text-sdk-java</name>
     <description>This is a library for sending messages with CM.com
     </description>
     <url>https://github.com/cmdotcom/text-sdk-java</url>
-
-    <distributionManagement>
-      <repository>
-        <id>github</id>
-        <name>GitHub cmdotcom Apache Maven Packages</name>
-        <url>https://maven.pkg.github.com/cmdotcom/text-sdk-java</url>
-      </repository>
-    </distributionManagement>
 
     <licenses>
         <license>
@@ -89,17 +81,6 @@
             </build>
         </profile>
     </profiles>
-
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
 
     <scm>
         <connection>scm:git:git://https://github.com/cmdotcom/text-sdk-java.git</connection>
