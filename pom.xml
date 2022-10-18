@@ -25,6 +25,14 @@
     </description>
     <url>https://github.com/cmdotcom/text-sdk-java</url>
 
+    <distributionManagement>
+      <repository>
+        <id>github</id>
+        <name>GitHub cmdotcom Apache Maven Packages</name>
+        <url>https://maven.pkg.github.com/cmdotcom/text-sdk-java</url>
+      </repository>
+    </distributionManagement>
+
     <licenses>
         <license>
             <name>MIT License</name>
