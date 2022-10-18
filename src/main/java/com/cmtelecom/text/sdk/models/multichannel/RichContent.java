@@ -37,7 +37,7 @@ public class RichContent {
         else
         {
             IRichMessage[] newArr = this.Conversation;
-            Arrays.copyOf(newArr, this.Conversation.length + 1 );
+            newArr = Arrays.copyOf(newArr, this.Conversation.length + 1 );
             newArr[newArr.length - 1] = part;
             this.Conversation = newArr;
         }
@@ -54,7 +54,7 @@ public class RichContent {
         else
         {
             Suggestion[] newArr = this.Suggestions;
-            Arrays.copyOf(newArr, this.Conversation.length + 1 );
+            newArr = Arrays.copyOf(newArr, this.Conversation.length + 1 );
             newArr[newArr.length - 1] = suggestion;
             this.Suggestions = newArr;
         }
