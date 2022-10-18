@@ -106,7 +106,7 @@ public class Message {
     ///     The given reference will be used in the status reports and MO replies for the message,
     ///     so you can link the messages to the sent batch.
     ///     For more information on status reports, see:
-    ///     https://docs.cmtelecom.com/business-messaging/v1.0#/status_report_webhook
+    ///     https://developers.cm.com/messaging/docs/incoming-status-report
     ///     The given reference must be between 1 - 32 alphanumeric characters, and will not work using demo accounts.
     /// </summary>
     @SerializedName("reference")
@@ -121,7 +121,7 @@ public class Message {
     ///     or a relative offset. A message is considered failed if it was not successfully delivered before that time. 
     ///     And via a Status Report we inform you this was the case.
     ///     For more information on status reports, see:
-    ///     https://docs.cmtelecom.com/business-messaging/v1.0#/status_report_webhook
+    ///     https://developers.cm.com/messaging/docs/incoming-status-report
     ///     You can supply the time zone for the validity period using either of the following formats:
     ///     
     ///     Absolute date and time:

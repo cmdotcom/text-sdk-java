@@ -21,7 +21,7 @@
     </build>
 
     <name>Text-sdk-Java</name>
-    <description>This is a  library for sending messages with CM.com
+    <description>This is a library for sending messages with CM.com
     </description>
     <url>https://github.com/cmdotcom/text-sdk-java</url>
 
