@@ -12,26 +12,39 @@ jobs:
       packages: write 
       
     steps:
-      - uses: actions/checkout@v3
+
+    #To maven central
       - name: Set up Java for publishing to Maven Central Repository
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v2
         with:
-          java-version: '11'
           distribution: 'adopt'
+          java-version: 11
           server-id: ossrh
-          server-username: MAVEN_USERNAME
-          server-password: MAVEN_PASSWORD
-      - name: Publish to the Maven Central Repository
-        run: mvn --batch-mode deploy
+          #gpg is only needed for the first run
+          gpg-private-key: ${{ secrets.GPG_JAR_KEY }} 
+          gpg-passphrase: MAVEN_GPG_PASSPHRASE
+          server-username: MAVEN_USERNAME 
+          server-password: MAVEN_PASSWORD 
+
+      - name: Deploy to the Maven Central Repository
+        run: | 
+          mvn -B -Dgpg.passphrase=${{ secrets.GPG_JAR_PASSWORD }} -P ossrh deploy 
         env:
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
-          MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
-      - name: Set up Java for publishing to GitHub Packages
-        uses: actions/setup-java@v3
+          MAVEN_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
+          MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_JAR_PASSWORD }}
+
+    # To github packages!
+      - name: Set up Java for publishing to Github Packages
+        uses: actions/setup-java@v2
         with:
-          java-version: '11'
-          distribution: 'adopt'
-      - name: Publish to GitHub Packages
-        run: mvn --batch-mode deploy
+          distribution: 'zulu'
+          java-version: 11
+          server-id: github
+
+      - name: Deploy to GitHub Packages
+        run: | 
+          mvn -B -Dgpg.passphrase=${{ secrets.GPG_JAR_PASSWORD }} -P github deploy 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_JAR_PASSWORD }}
