@@ -18,7 +18,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'adopt'
-          java-version: 11
+          java-version: 7
           server-id: ossrh
           #gpg is only needed for the first run
           gpg-private-key: ${{ secrets.GPG_JAR_KEY }} 
@@ -39,7 +39,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 7
           server-id: github
 
       - name: Deploy to GitHub Packages
