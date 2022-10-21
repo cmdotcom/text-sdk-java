@@ -1,6 +1,6 @@
 package com.cm.text.sdk.models.templates;
 
-import com.cmtelecom.text.sdk.models.multichannel.IRichMessage;
+import com.cm.text.sdk.models.multichannel.IRichMessage;
 import com.google.gson.annotations.SerializedName;
 
 public class TemplateMessage implements IRichMessage {

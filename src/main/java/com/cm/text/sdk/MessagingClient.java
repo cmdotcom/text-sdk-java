@@ -1,10 +1,10 @@
 package com.cm.text.sdk;
 
 import com.google.gson.Gson;
-import com.cmtelecom.text.sdk.models.Message;
-import com.cmtelecom.text.sdk.models.Request;
-import com.cmtelecom.text.sdk.models.Response;
-import com.cmtelecom.text.sdk.utils.HttpHelper;
+import com.cm.text.sdk.models.Message;
+import com.cm.text.sdk.models.Request;
+import com.cm.text.sdk.models.Response;
+import com.cm.text.sdk.utils.HttpHelper;
 
 public class MessagingClient {
     

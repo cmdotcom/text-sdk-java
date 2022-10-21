@@ -1,15 +1,14 @@
 package com.cm.text.sdk;
 
-import com.cmtelecom.text.sdk.models.Body;
-import com.cmtelecom.text.sdk.models.Channel;
-import com.cmtelecom.text.sdk.models.Message;
-import com.cmtelecom.text.sdk.models.Recipient;
-import com.cmtelecom.text.sdk.models.multichannel.IRichMessage;
-import com.cmtelecom.text.sdk.models.multichannel.RichContent;
-import com.cmtelecom.text.sdk.models.multichannel.Suggestion;
-import com.cmtelecom.text.sdk.models.templates.TemplateMessage;
-import com.cmtelecom.text.sdk.models.templates.TemplateMessageContent;
-import com.cmtelecom.text.sdk.models.templates.WhatsAppTemplate;
+
+import com.cm.text.sdk.models.Body;
+import com.cm.text.sdk.models.Channel;
+import com.cm.text.sdk.models.Message;
+import com.cm.text.sdk.models.Recipient;
+import com.cm.text.sdk.models.multichannel.IRichMessage;
+import com.cm.text.sdk.models.multichannel.RichContent;
+import com.cm.text.sdk.models.multichannel.Suggestion;
+import com.cm.text.sdk.models.templates.TemplateMessage;
 
 import java.util.ArrayList;
 import java.util.List;

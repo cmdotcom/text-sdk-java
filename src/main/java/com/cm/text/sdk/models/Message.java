@@ -1,5 +1,6 @@
 package com.cm.text.sdk.models;
 
+import com.cm.text.sdk.models.multichannel.RichContent;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
@@ -113,7 +114,7 @@ public class Message {
     public String Reference;
 
     @SerializedName("richContent")
-    public com.cmtelecom.text.sdk.models.multichannel.RichContent RichContent;
+    public com.cm.text.sdk.models.multichannel.RichContent RichContent;
     
     /// <summary>
     ///     Optional: For each message you send, you can set a validity.

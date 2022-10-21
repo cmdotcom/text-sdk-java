@@ -1,6 +1,6 @@
 package com.cm.text.sdk.models.templates;
 
-import com.cmtelecom.text.sdk.models.multichannel.MediaContent;
+import com.cm.text.sdk.models.multichannel.MediaContent;
 import com.google.gson.annotations.SerializedName;
 
 public class TemplateParameters {
