@@ -18,7 +18,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'adopt'
-          java-version: 7
+          java-version: 8.0.181+13
           server-id: ossrh
           #gpg is only needed for the first run
           gpg-private-key: ${{ secrets.GPG_JAR_KEY }} 
