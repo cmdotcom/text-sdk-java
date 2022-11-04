@@ -30,8 +30,8 @@ jobs:
       - name: Set up Java for publishing to Maven Central Repository
         uses: actions/setup-java@v2
         with:
-          distribution: 'adopt'
-          java-version: 8.0.181+13
+          distribution: 'zulu'
+          java-version: 8
           server-id: ossrh
           #gpg is only needed for the first run
           gpg-private-key: ${{ secrets.GPG_JAR_KEY }} 
