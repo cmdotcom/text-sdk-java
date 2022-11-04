@@ -41,7 +41,7 @@ jobs:
 
       - name: Deploy to the Maven Central Repository
         run: | 
-          mvn -B -f pom.xml -Dgpg.passphrase=${{ secrets.GPG_JAR_PASSWORD }} -P ossrh deploy 
+          mvn -B "-Dgpg.passphrase=${{ secrets.GPG_JAR_PASSWORD }}" -P ossrh deploy 
         env:
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
