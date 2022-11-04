@@ -23,8 +23,10 @@ jobs:
       packages: write 
 
     steps:
+      - name: Check out Repository
+        uses: actions/checkout@v3
 
-    #To maven central
+      #To maven central
       - name: Set up Java for publishing to Maven Central Repository
         uses: actions/setup-java@v2
         with:
