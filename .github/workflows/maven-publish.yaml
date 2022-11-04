@@ -32,6 +32,7 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: 8
+          cache: maven
           server-id: ossrh
           #gpg is only needed for the first run
           gpg-private-key: ${{ secrets.GPG_JAR_KEY }} 
@@ -53,6 +54,7 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: 8
+          cache: maven
           server-id: github
 
       - name: Deploy to GitHub Packages
