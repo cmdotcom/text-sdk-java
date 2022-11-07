@@ -28,9 +28,6 @@
             <goals>
               <goal>sign</goal>
             </goals>
-            <configuration>
-              <keyname>CE16522C3456A69E</keyname>
-            </configuration>
           </execution>
         </executions>
       </plugin>
