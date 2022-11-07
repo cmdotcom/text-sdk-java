@@ -1,23 +1,31 @@
-[![Build Status](https://dev.azure.com/cmdotcom/text-sdk-java/_apis/build/status/cmdotcom.text-sdk-java?branchName=master)](https://dev.azure.com/cmdotcom/text-sdk-java/_build/latest?definitionId=1&branchName=master)
 
 ## @cmdotcom/text-sdk: A helper library to send messages.
 
 Want to send messages in your Java application? Then you are at the right place.
-If you want to get all the functionalities, go to: [CM.com API Docs](https://developers.cm.com/messaging/)
+If you want to get all the functionalities, go to: [CM.com API Docs](https://developers.cm.com/messaging)
 
 
 ## Installing
-Add the GSon dependency to your project: https://mvnrepository.com/artifact/com.google.code.gson/gson/2.8.5
+Warning: Namespace has been changed between 1.3 and 2.0
+### Above 2.0
+```xml
+        <dependency>
+            <groupId>com.cm</groupId>
+            <artifactId>text-sdk</artifactId>
+            <version>2.0</version>
+        </dependency>
+```
 
-[![Build Status](https://dev.azure.com/cmdotcom/text-sdk-java/_apis/build/status/cmdotcom.text-sdk-java?branchName=master)](https://dev.azure.com/cmdotcom/text-sdk-java/_build/latest?definitionId=1&branchName=master)
-Download our Jar file and add it to your project. 
+### Version 1.3
+Version 1.3 is available as JAR under the 1.3 release [here](https://github.com/cmdotcom/text-sdk-java/releases/tag/v1.3-snapshot) <br>
+You will have to add GSON manually: https://mvnrepository.com/artifact/com.google.code.gson/gson/2.8.5
 
 
 ## Instantiate the client
 Use your productToken which authorizes you on the CM platform. Get yours on CM.com
 
 ```cs
-MessagingClient client = new MessagingClient("YourproductToken");
+MessagingClient client = new MessagingClient("YourCMProductToken");
 ```
 
 ## Send a message
@@ -82,7 +90,8 @@ Sending an message returns the response body
 }
 ```
 
-## Send whatsApp template messages using the message builder please check our docs to see more information about whatsApp templates: https://developers.cm.com/messaging/docs/whatsapp#template
+## Whatsapp Templates
+Send WhatsApp template messages using the message builder please take a look at our documentation in the [Whatsapp templates section](https://developers.cm.com/messaging/docs/whatsapp#template)
 ```cs
 		 
 MessagingClient client = new MessagingClient("YourProductToken");
