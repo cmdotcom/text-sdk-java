@@ -91,7 +91,7 @@ Sending an message returns the response body
 ```
 
 ## Whatsapp Templates
-Send WhatsApp template messages using the message builder please check our docs to see more information about WhatsApp templates: https://docs.cmtelecom.com/en/api/business-messaging-api/1.0/index#whatsapp-template-message
+Send WhatsApp template messages using the message builder please take a look at our documentation in the [Whatsapp templates section](https://developers.cm.com/messaging/docs/whatsapp#template)
 ```cs
 		 
 MessagingClient client = new MessagingClient("YourProductToken");
