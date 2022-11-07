@@ -6,7 +6,7 @@ If you want to get all the functionalities, go to: [CM.com API Docs](https://dev
 
 
 ## Installing
-
+Warning: Namespace has been changed between 1.3 and 2.0
 ### Above 2.0
 ```xml
         <dependency>
