@@ -28,6 +28,9 @@
             <goals>
               <goal>sign</goal>
             </goals>
+            <configuration>
+              <keyname>CE16522C3456A69E</keyname>
+            </configuration>
           </execution>
         </executions>
       </plugin>
@@ -54,7 +57,7 @@
       <distributionManagement>
         <repository>
           <id>ossrh</id>
-          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+          <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
         </repository>
       </distributionManagement>
     </profile>
