@@ -54,7 +54,7 @@ public class RichContent {
         else
         {
             Suggestion[] newArr = this.Suggestions;
-            newArr = Arrays.copyOf(newArr, this.Conversation.length + 1 );
+            newArr = Arrays.copyOf(newArr, this.Suggestions.length + 1 );
             newArr[newArr.length - 1] = suggestion;
             this.Suggestions = newArr;
         }
