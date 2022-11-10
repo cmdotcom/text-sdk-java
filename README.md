@@ -9,11 +9,11 @@ If you want to get all the functionalities, go to: [CM.com API Docs](https://dev
 Warning: Namespace has been changed between 1.3 and 2.0
 ### Above 2.0
 ```xml
-        <dependency>
-            <groupId>com.cm</groupId>
-            <artifactId>text-sdk</artifactId>
-            <version>2.0</version>
-        </dependency>
+<dependency>
+    <groupId>com.cm</groupId>
+    <artifactId>text-sdk</artifactId>
+    <version>2.0.1</version>
+</dependency>
 ```
 
 ### Version 1.3
