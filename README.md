@@ -8,7 +8,7 @@ If you want to get all the functionalities, go to: [CM.com API Docs](https://dev
 ## Installing
 Warning: Namespace has been changed between 1.3 and 2.0
 ### Above 2.0
-You can find our SDK [here](https://mvnrepository.com/artifact/com.cm/text-sdk), or below for a generic pom.xml.
+You can find our SDK [here](https://mvnrepository.com/artifact/com.cm/text-sdk), or below incase you are using a generic pom.xml.
 ```xml
 <dependency>
     <groupId>com.cm</groupId>
