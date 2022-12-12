@@ -8,6 +8,7 @@ If you want to get all the functionalities, go to: [CM.com API Docs](https://dev
 ## Installing
 Warning: Namespace has been changed between 1.3 and 2.0
 ### Above 2.0
+You can find our SDK [here](https://mvnrepository.com/artifact/com.cm/text-sdk), or below for a generic pom.xml.
 ```xml
 <dependency>
     <groupId>com.cm</groupId>
@@ -17,7 +18,7 @@ Warning: Namespace has been changed between 1.3 and 2.0
 ```
 
 ### Version 1.3
-Version 1.3 is available as JAR under the 1.3 release [here](https://github.com/cmdotcom/text-sdk-java/releases/tag/v1.3-snapshot) <br>
+Version 1.3 is available as JAR under the [1.3 release here](https://github.com/cmdotcom/text-sdk-java/releases/tag/v1.3-snapshot) <br>
 You will have to add GSON manually: https://mvnrepository.com/artifact/com.google.code.gson/gson/2.8.5
 
 
