@@ -140,6 +140,13 @@ public class Message {
     @SerializedName("validity")
     public String Validity;
 
+    /// <summary>
+    ///     Optional: If you set DCS to '0' or do not include the parameter, the messages uses standard GSM encoding. 
+    ///               To set your message up for unicode messaging set the value of dcs to 8 
+    ///     https://developers.cm.com/messaging/docs/sms#custom-dcs
+    /// </summary>
+    @SerializedName("dcs")
+    public String Dcs = "0";
 
     public Message(Body body, String from, List<Recipient> recipientList) {
         this.Body = body;
