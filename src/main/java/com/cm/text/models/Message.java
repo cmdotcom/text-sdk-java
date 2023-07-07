@@ -146,7 +146,7 @@ public class Message {
     ///     https://developers.cm.com/messaging/docs/sms#custom-dcs
     /// </summary>
     @SerializedName("dcs")
-    public String Dcs = "0";
+    public int Dcs = 0;
 
     public Message(Body body, String from, List<Recipient> recipientList) {
         this.Body = body;

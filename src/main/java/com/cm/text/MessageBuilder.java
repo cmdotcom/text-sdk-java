@@ -137,7 +137,7 @@ public class MessageBuilder {
     /// </summary>
     /// <param name="dcs"></param>
     /// <returns></returns>
-    public MessageBuilder WithDcs(String dcs)
+    public MessageBuilder WithDcs(int dcs)
     {
         this.message.Dcs = dcs;
         return this;
