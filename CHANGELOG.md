@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [2.1.0] - 2023-07-05
 ### Changed
 - Implement DCS parameter (#23)
+- Remove unneeded log line that may leak confidential/private information (#22)
 
 ## [2.0.1] - 2022-11-07
 ### Changed
