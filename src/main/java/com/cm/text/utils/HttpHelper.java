@@ -35,8 +35,6 @@ public class HttpHelper {
                 }
             }
 
-            System.out.println(response.toString());
-
             return response.toString();
         }
         catch ( Exception e ) {
