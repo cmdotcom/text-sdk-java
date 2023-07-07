@@ -131,4 +131,15 @@ public class MessageBuilder {
         this.richContent.AddConversationPart(template);
         return this;
     }
+
+    /// <summary>
+    ///     Add a custom DCS
+    /// </summary>
+    /// <param name="dcs"></param>
+    /// <returns></returns>
+    public MessageBuilder WithDcs(int dcs)
+    {
+        this.message.Dcs = dcs;
+        return this;
+    }
 }
