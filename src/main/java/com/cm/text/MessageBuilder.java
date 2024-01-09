@@ -127,7 +127,7 @@ public class MessageBuilder {
         if (this.richContent == null)
             this.richContent = new RichContent();
 
-        this.richContent.Suggestions = suggestions;
+        this.richContent.setSuggestions(suggestions);
         return this;
     }
 

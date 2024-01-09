@@ -2,34 +2,96 @@ package com.cm.text.models.multichannel;
 
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * Displays a location
+ */
 public class ViewLocationOptions {
-    /// <summary>
-    ///     Optional: The label to display at the pin
-    /// </summary>
+    /**
+     * Optional: The label to display at the pin
+     */
     @SerializedName("label")
-    public String Label;
+    private String label;
 
-    /// <summary>
-    ///     The latitude in degrees
-    /// </summary>
-    /// <example>51.603802</example>
-    /// <remarks>Either Latitude and <see cref="Longitude" /> or <see cref="SearchQuery" /> is required </remarks>
+    /**
+     * The latitude in degrees
+     */
     @SerializedName("latitude")
-    public String Latitude;
+    private String latitude;
 
-    /// <summary>
-    ///     The longitude in degrees
-    /// </summary>
-    /// <example>4.770821</example>
-    /// <remarks>Either <see cref="Latitude" /> and Longitude or <see cref="SearchQuery" /> is required </remarks>
+    /**
+     * The longitude in degrees
+     */
     @SerializedName("longitude")
-    public String Longitude;
+    private String longitude;
 
-    /// <summary>
-    ///     Search for this location instead of using the latitude/longitude.
-    /// </summary>
-    /// <remarks>Either <see cref="Latitude" /> and <see cref="Longitude" /> or SearchQuery is required </remarks>
+    /**
+     * Search for this location instead of using the latitude/longitude.
+     */
     @SerializedName("searchQuery")
-    public String SearchQuery;
+    private String searchQuery;
+
+    /**
+     *
+     * @return The label to display at the pin
+     */
+    public String getLabel() {
+        return label;
+    }
+
+    /**
+     *
+     * @param label Optional: The label to display at the pin
+     */
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    /**
+     *
+     * @return The latitude in degrees
+     */
+    public String getLatitude() {
+        return latitude;
+    }
+
+    /**
+     *
+     * @param latitude The latitude in degrees
+     */
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    /**
+     *
+     * @return The longitude in degrees
+     */
+    public String getLongitude() {
+        return longitude;
+    }
+
+    /**
+     *
+     * @param longitude The longitude in degrees
+     */
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
+    }
+
+    /**
+     *
+     * @return Search for this location instead of using the latitude/longitude
+     */
+    public String getSearchQuery() {
+        return searchQuery;
+    }
+
+    /**
+     *
+     * @param searchQuery Search for this location instead of using the latitude/longitude
+     */
+    public void setSearchQuery(String searchQuery) {
+        this.searchQuery = searchQuery;
+    }
 }
 

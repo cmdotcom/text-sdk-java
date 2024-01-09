@@ -19,8 +19,8 @@ public class DialSuggestion extends Suggestion {
      * @param dial The dial options to use
      */
     public DialSuggestion(Dial dial) {
-        this.action = "reply";
-       this.dial = dial;
+        this.action = "dial";
+        this.dial = dial;
     }
 
     /**

@@ -2,26 +2,46 @@ package com.cm.text.models.multichannel;
 
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * A simple text message to send
+ */
 public class TextMessage implements IRichMessage{
-    /// <summary>
-    ///     Construct an empty text message.
-    /// </summary>
+
+    /**
+     * The text to display.
+     */
+    @SerializedName("text")
+    private String text;
+
+    /**
+     * Construct an empty text message.
+     */
     public TextMessage()
     {
     }
 
-    /// <summary>
-    ///     Construct a text message and initialise the <see cref="Text" />
-    /// </summary>
-    /// <param name="text"></param>
+    /**
+     * Constructs the message with the text
+     * @param text text for the end user
+     */
     public TextMessage(String text)
     {
-        this.Text = text;
+        this.text = text;
     }
 
-    /// <summary>
-    ///     The text to display.
-    /// </summary>
-    @SerializedName("text")
-    public String Text;
+    /**
+     *
+     * @return The text to display.
+     */
+    public String getText() {
+        return text;
+    }
+
+    /**
+     *
+     * @param text The text to display.
+     */
+    public void setText(String text) {
+        this.text = text;
+    }
 }
