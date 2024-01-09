@@ -1,6 +1,8 @@
 package com.cm.text;
 
 public class Config {
-
-    public static String ApiUrl = "https://gw.cmtelecom.com/v1.0/message";
+    /**
+     * Api url for the business messaging api
+     */
+    public static String BusinessMessagingApiUrl = "https://gw.messaging.cm.com/v1.0/message";
 }

@@ -7,59 +7,73 @@ import com.cm.text.utils.HttpHelper;
 import com.google.gson.Gson;
 
 public class MessagingClient {
-    
-    private String productToken;
-    
-    
+
+    /**
+     * Product token to use when sending a message
+     */
+    private final String productToken;
+
+
+    /**
+     * Initializes a new instance of the class
+     * @param productToken The API key/product token to use
+     */
     public MessagingClient( String productToken ) {
         this.productToken = productToken;
     }
-    
-    
+
+
+    /**
+     * Send a simple message
+     * @param messageText message content
+     * @param from sender id
+     * @param to recipient
+     * @return response message
+     */
     public Response.HttpResponseBody sendTextMessage( String messageText, String from, String[] to ) {
         
         MessageBuilder builder = new MessageBuilder( messageText, from, to );
         
-        Message message = builder.Build();
+        Message message = builder.build();
         
         String body = GetHttpPostBody( productToken, message );
         
-        String result = HttpHelper.post( Config.ApiUrl, body );
+        String result = HttpHelper.post( Config.BusinessMessagingApiUrl, body );
         
         return getResponseBody( result );
     }
-    
-    
+
+    /**
+     * Sends the message towards an end user
+     * @param message the message to send
+     * @return message sending result
+     */
     public Response.HttpResponseBody sendMessage( Message message ) {
         String body = GetHttpPostBody( productToken, message );
-        String result = HttpHelper.post( Config.ApiUrl, body );
+        String result = HttpHelper.post( Config.BusinessMessagingApiUrl, body );
         return getResponseBody( result );
     }
-    
-    
-    /// <summary>
-    ///     Gets the HTTP post body.
-    /// </summary>
-    /// <param name="apiKey">The API key.</param>
-    /// <param name="message">The message to send.</param>
-    /// <returns></returns>
+
+    /**
+     * Gets the HTTP post response as an object.
+     * @param body JSON input
+     * @return Result object
+     */
     protected static Response.HttpResponseBody getResponseBody( String body ) {
         try {
-            Response.HttpResponseBody result = new Gson().fromJson( body, Response.HttpResponseBody.class );
-            return result;
+            return new Gson().fromJson( body, Response.HttpResponseBody.class );
         }
         catch ( Exception e ) {
             throw new RuntimeException( "Invalid json response-body", e );
         }
     }
-    
-    
-    /// <summary>
-    ///     Gets the HTTP post body.
-    /// </summary>
-    /// <param name="apiKey">The API key.</param>
-    /// <param name="message">The message to send.</param>
-    /// <returns></returns>
+
+    /**
+     * Transforms the message into JSON
+     * @param productToken token to add to the JSON
+     * @param message content to send
+     * @return JSON body to send
+     */
     protected static String GetHttpPostBody( String productToken, Message message ) {
         Request.Messages messages = new Request.Messages();
         Request.MessagesEnvelope request = new Request.MessagesEnvelope();
