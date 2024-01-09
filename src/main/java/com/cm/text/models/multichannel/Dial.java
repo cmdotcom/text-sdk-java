@@ -3,9 +3,24 @@ package com.cm.text.models.multichannel;
 import com.google.gson.annotations.SerializedName;
 
 public class Dial {
-    /// <summary>
-    ///     The number to call (in international format)
-    /// </summary>
+    /**
+     * The number to call (in international format)
+     */
     @SerializedName("phoneNumber")
-    public String PhoneNumber;
+    private String phoneNumber;
+
+    /**
+     *
+     * @return The number to call (in international format)
+     */
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    /**
+     * @param phoneNumber The number to call (in international format)
+     */
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 }

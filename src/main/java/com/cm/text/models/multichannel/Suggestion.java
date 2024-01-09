@@ -8,7 +8,7 @@ public abstract class Suggestion {
     ///     The action of this suggestion
     /// </summary>
     @SerializedName("action")
-    public String Action;
+    protected String action;
 
     /// <summary>
     ///     The text the end user will see

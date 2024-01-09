@@ -12,7 +12,7 @@ public class ViewLocationSuggestion extends Suggestion {
     private ViewLocationOptions locationOptions;
 
     public ViewLocationSuggestion(ViewLocationOptions locationOptions) {
-        this.Action = "CreateCalendarEvent";
+        this.action = "CreateCalendarEvent";
         this.locationOptions = locationOptions;
     }
 }

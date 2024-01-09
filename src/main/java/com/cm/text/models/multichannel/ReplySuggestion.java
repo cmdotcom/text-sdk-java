@@ -12,7 +12,7 @@ public class ReplySuggestion extends Suggestion {
     public String PostbackData;
 
     public ReplySuggestion(String postbackData) {
-        this.Action = "reply";
+        this.action = "reply";
         this.PostbackData = postbackData;
     }
 }

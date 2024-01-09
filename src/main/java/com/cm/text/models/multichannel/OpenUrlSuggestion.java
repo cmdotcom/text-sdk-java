@@ -12,7 +12,7 @@ public class OpenUrlSuggestion extends Suggestion {
 
     public OpenUrlSuggestion( String label, String url)
     {
-        this.Action = "openUrl";
+        this.action = "openUrl";
         this.Label = label;
         this.Url = url;
     }
