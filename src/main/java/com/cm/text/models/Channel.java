@@ -2,108 +2,89 @@ package com.cm.text.models;
 
 import com.google.gson.annotations.SerializedName;
 
-public enum  Channel {
-    /// <summary>
-    ///     Messages will be sent as SMS text messages
-    /// </summary>
+/**
+ * Represents a Channel to use when sending messages
+ */
+public enum Channel {
+
+    /**
+     * Messages will be sent as SMS text messages
+     */
     SMS,
 
-    /// <summary>
-    ///     Send messages using WhatsApp for business
-    /// </summary>
-    /// <remarks>
-    ///     Note that CM needs to configure this for you to work.
-    /// </remarks>
+    /**
+     * Send messages using WhatsApp for business.
+     * Note that a WhatsApp profile at CM.com is required
+     */
     WhatsApp,
-
-    /// <summary>
-    ///     Sends messages to push using Hybrid messages.
-    ///     See also https://developers.cm.com/messaging
-    /// </summary>
-    /// <remarks>Works only when <see cref="Message.HybridAppKey" /> is set</remarks>
-    Push,
-
-    /// <summary>
-    ///     Messages will be sent over RCS.
-    /// </summary>
-    /// <remarks>
-    ///     Note that CM needs to configure this for you to work.
-    /// </remarks>
+    /**
+     * Messages will be sent over RCS.
+     * Note that CM.Com needs to configure this for you to work
+     */
     RCS,
 
-    /// <summary>
-    ///     Messages will be sent over Viber.
-    /// </summary>
-    /// <remarks>
-    ///     Note that CM needs to configure this for you to work.
-    /// </remarks>
+    /**
+     * Messages will be sent over Viber.
+     * Note that CM.Com needs to configure this for you to work.
+     */
     Viber,
 
-    /// <summary>
-    ///     Messages will be sent using text to speech.
-    /// </summary>
-    /// <remarks>
-    ///     Note that CM needs to configure this for you to work.
-    /// </remarks>
+    /**
+     * Messages will be sent using text to speech.
+     * Note that CM.Com needs to configure this for you to work.
+     */
     Voice,
 
-    /// <summary>
-    ///     Messages will be sent over Apple Business Chat.
-    /// </summary>
-    /// <remarks>
-    ///     Note that CM needs to configure this for you to work.
-    /// </remarks>
-    // ReSharper disable once InconsistentNaming
-    iMessage,
+    /**
+     * Messages will be sent over Apple Messages for Business.
+     * Note that CM.Com needs to configure this for you to work.
+     */
+    @SerializedName("Apple Messages for Business")
+    AppleMessagesForBusiness,
 
     /// <summary>
     ///     Messages will be sent over Line.
     /// </summary>
     /// <remarks>
-    ///     Note that CM needs to configure this for you to work.
+    ///     Note that CM.Com needs to configure this for you to work.
     /// </remarks>
+    /**
+     * Messages will be sent over Line.
+     * Note that CM.Com needs to configure this for you to work.
+     */
     Line,
 
-    /// <summary>
-    ///     Messages will be sent over Twitter.
-    /// </summary>
-    /// <remarks>
-    ///     Note that CM needs to configure this for you to work.
-    /// </remarks>
+
+    /**
+     * Messages will be sent over Twitter.
+     * Note that CM.Com needs to configure this for you to work.
+     */
     Twitter,
 
-    /// <summary>
-    ///     Messages will be sent over MobilePush.
-    /// </summary>
-    /// <remarks>
-    ///     This channel is the successor of the "Push" channel.
-    ///     Contact CM for information on how to migrate your current Push integration
     /// </remarks>
+    /**
+     * Messages will be sent over MobilePush.
+     * This channel is the successor of the "Push" channel.
+     */
     MobilePush,
 
-    /// <summary>
-    ///     Messages will be sent over Facebook Messenger.
-    /// </summary>
-    /// <remarks>
-    ///     Note that CM needs to configure this for you to work.
-    /// </remarks>
+    /**
+     * Messages will be sent over Facebook Messenger.
+     * Note that CM.Com needs to configure this for you to work.
+     */
     @SerializedName("Facebook Messenger")
     FacebookMessenger,
 
-    /// <summary>
-    ///     Messages will be sent over Google Business Messages.
-    /// </summary>
-    /// <remarks>
-    ///     Note that CM needs to configure this for you to work.
-    /// </remarks>
+    /**
+     * Messages will be sent over Google Business Messages.
+     * Note that CM.Com needs to configure this for you to work.
+     */
     @SerializedName("Google Business Messages")
     GoogleBusinessMessages,
 
-        /// <summary>
-    ///     Messages will be sent over Instagram.
-    /// </summary>
-    /// <remarks>
-    ///     Note that CM needs to configure this for you to work.
-    /// </remarks>
+    /**
+     * Messages will be sent over Instagram.
+     * Note that CM.Com needs to configure this for you to work.
+     */
     Instagram
 }
