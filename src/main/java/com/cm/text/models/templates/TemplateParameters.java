@@ -4,44 +4,49 @@ import com.cm.text.models.multichannel.MediaContent;
 import com.google.gson.annotations.SerializedName;
 
 public class TemplateParameters {
-    /// <summary>
-    /// Describes the parameter type.
-    /// </summary>
-    /// <remarks>Describes the parameter type. Possible values: text, currency, date_time, image, document.
-    /// </remarks>
+    /**
+     * Describes the parameter type. Describes the parameter type. Possible values: text, currency, date_time, image, document.
+     */
     @SerializedName("type")
-    public String Type;
+    private String parameterType;
     @SerializedName("text")
-    public String Text;
+    private String text;
     @SerializedName("media")
-    public MediaContent Media;
+    private MediaContent media;
 
-    /// <summary>
-    ///  Default constructor
-    /// </summary>
     public TemplateParameters() {
-
     }
 
-    /// <summary>
-    ///  Constructor which sets values for rich media template
-    /// </summary>
-    /// <param name="Type"></param>
-    /// <param name="Text"></param>
-    /// <param name="MediaContent"></param>
-    public TemplateParameters(String type, MediaContent mediaContent) {
-        this.Type = type;
-        this.Media = mediaContent;
+     public TemplateParameters(String type, MediaContent mediaContent) {
+        this.parameterType = type;
+        this.media = mediaContent;
     }
 
-    /// <summary>
-    ///  Constructor which sets values for a text template
-    /// </summary>
-    /// <param name="Type"></param>
-    /// <param name="Text"></param>
-    /// <param name="MediaContent"></param>
     public TemplateParameters(String type, String text) {
-        this.Type = type;
-        this.Text = text;
+        this.parameterType = type;
+        this.text = text;
+    }
+
+    /**
+     *
+     * @return Describes the parameter type. Describes the parameter type. Possible values: text, currency, date_time, image, document.
+     */
+    public String getParameterType() {
+        return parameterType;
+    }
+
+    /**
+     * @param parameterType Describes the parameter type. Describes the parameter type. Possible values: text, currency, date_time, image, document.
+     */
+    public void setParameterType(String parameterType) {
+        this.parameterType = parameterType;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
     }
 }

@@ -4,34 +4,61 @@ import com.google.gson.annotations.SerializedName;
 
 public class TemplateComponents {
 
-    /// <summary>
-    /// Source: https://developers.facebook.com/docs/whatsapp/api/messages/message-templates
-    /// 
-    /// Required, describes the component type. Possible values: header, content, footer.
-    /// </summary>
+    /**
+     * Required, describes the component type. Possible values: header, content, footer.
+     * Source: <a href="https://developers.facebook.com/docs/whatsapp/api/messages/message-templates">Meta developer docs</a>
+     */
     @SerializedName("type")
-    public String Type;
-    /// <summary>
-    /// Source: https://developers.facebook.com/docs/whatsapp/api/messages/message-templates
-    /// Can be empty. Array containing the dynamic content of the message.
-    /// </summary>
+    private String componentType;
+    /**
+     * Array containing the dynamic content of the message (can be empty)
+     * Source: <a href="https://developers.facebook.com/docs/whatsapp/api/messages/message-templates">Meta developer docs</a>
+     */
     @SerializedName("parameters")
-    public TemplateParameters[] Parameters;
+    public TemplateParameters[] templateParameters;
 
-    /// <summary>
-    ///  Default constructor
-    /// </summary>
     public TemplateComponents() {
 
     }
 
-    /// <summary>
-    ///     Constructor which sets values
-    /// </summary>
-    /// <param name="Type"></param>
-    /// <param name="Parameters"></param>
-    public TemplateComponents(String type, TemplateParameters[] parameters) {
-        this.Type = type;
-        this.Parameters = parameters;
+    /**
+     * @param type Required, describes the component type. Possible values: header, content, footer.
+     * @param templateParameters Array containing the dynamic content of the message (can be empty)
+     */
+   public TemplateComponents(String type, TemplateParameters[] templateParameters) {
+        this.componentType = type;
+        this.templateParameters = templateParameters;
+    }
+
+    /**
+     *
+     * @return describes the component type. Possible values: header, content, footer.
+     */
+    public String getComponentType() {
+        return componentType;
+    }
+
+    /**
+     *
+     * @param componentType describes the component type. Possible values: header, content, footer.
+     */
+    public void setComponentType(String componentType) {
+        this.componentType = componentType;
+    }
+
+    /**
+     *
+     * @return Array containing the dynamic content of the message (can be empty)
+     */
+    public TemplateParameters[] getTemplateParameters() {
+        return templateParameters;
+    }
+
+    /**
+     *
+     * @param templateParameters Array containing the dynamic content of the message (can be empty)
+     */
+    public void setTemplateParameters(TemplateParameters[] templateParameters) {
+        this.templateParameters = templateParameters;
     }
 }
