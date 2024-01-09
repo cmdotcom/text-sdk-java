@@ -6,6 +6,9 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
+/**
+ * Helper class to send HTTP requests
+ */
 public class HttpHelper {
 
     /**
