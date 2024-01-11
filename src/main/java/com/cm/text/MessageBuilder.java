@@ -18,7 +18,7 @@ import java.util.List;
  */
 public class MessageBuilder {
 
-    private Message message;
+    private final Message message;
     private RichContent richContent;
 
     /**
@@ -32,9 +32,8 @@ public class MessageBuilder {
         List<Recipient> recipientList = new ArrayList<>();
         for (String number : to) {
             Recipient r = new Recipient();
-            r.Number = number;
+            r.setNumber(number);
             recipientList.add(r);
-
         }
 
         this.message = new Message(new Body(messageText), from, recipientList);
@@ -59,7 +58,7 @@ public class MessageBuilder {
         List<Recipient> recipientList = new ArrayList<>();
         for (String number : to) {
             Recipient r = new Recipient();
-            r.Number = number;
+            r.setNumber(number);
             recipientList.add(r);
 
         }
@@ -73,7 +72,7 @@ public class MessageBuilder {
      */
     public Message build()
     {
-        this.message.RichContent = this.richContent;
+        this.message.setRichContent(this.richContent);
         return this.message;
     }
 
@@ -87,7 +86,7 @@ public class MessageBuilder {
      */
     public MessageBuilder withAllowedChannels(Channel[] channels)
     {
-        this.message.AllowedChannels = channels;
+        this.message.setAllowedChannels(channels);
         return this;
     }
 
@@ -98,7 +97,7 @@ public class MessageBuilder {
      */
     public MessageBuilder withReference(String reference)
     {
-        this.message.Reference = reference;
+        this.message.setReference(reference);
         return this;
     }
 
@@ -152,7 +151,7 @@ public class MessageBuilder {
      */
     public MessageBuilder withDcs(int dcs)
     {
-        this.message.Dcs = dcs;
+        this.message.setDcs(dcs);
         return this;
     }
 }
