@@ -69,11 +69,21 @@ public class MessagingClient {
         return getResponseBody(result, OtpResponse.class);
     }
 
-
+    /**
+     * Checks one otp request
+     * @param id the id to use
+     * @param code the code to check
+     * @return the result of the check
+     */
     public OtpResponse verifyOtpRequest(String id, String code) {
         return verifyOtpRequest(new OtpCheck(id, code));
     }
 
+    /**
+     * Checks one otp request
+     * @param otpCheck the id and code of the check
+     * @return the result of the check
+     */
     public OtpResponse verifyOtpRequest(OtpCheck otpCheck) {
         String body = GetHttpPostBody(otpCheck);
         String url = String.format(Config.OtpVerifyEndpointFormatter, otpCheck.getId());
