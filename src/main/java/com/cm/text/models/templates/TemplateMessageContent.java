@@ -4,27 +4,22 @@ import com.google.gson.annotations.SerializedName;
 
 public class TemplateMessageContent {
 
-    /// <summary>
-    /// The WhatsApp template message
-    /// </summary>
-    /// <remarks>Templates need to be configured by CM and approved by Whatsapp before it is possible
-    /// to send these messages.
-    /// </remarks>
     @SerializedName("whatsapp")
-    public WhatsAppTemplate WhatsAppTemplate;
+    private WhatsAppTemplate whatsAppTemplate;
 
-    /// <summary>
-    ///  Default constructor
-    /// </summary>
     public TemplateMessageContent() {
 
     }
 
-    /// <summary>
-    ///  Constructor which sets values
-    /// </summary>
-    /// <param name="WhatsAppTemplate"></param>
     public TemplateMessageContent(WhatsAppTemplate WhatsAppTemplate) {
-        this.WhatsAppTemplate = WhatsAppTemplate;
+        this.whatsAppTemplate = WhatsAppTemplate;
+    }
+
+    public WhatsAppTemplate getWhatsAppTemplate() {
+        return whatsAppTemplate;
+    }
+
+    public void setWhatsAppTemplate(WhatsAppTemplate whatsAppTemplate) {
+        this.whatsAppTemplate = whatsAppTemplate;
     }
 }

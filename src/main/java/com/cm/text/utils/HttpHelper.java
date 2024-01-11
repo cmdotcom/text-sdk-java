@@ -6,8 +6,19 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
+/**
+ * Helper class to send HTTP requests
+ */
 public class HttpHelper {
-    private static String sendRequest( String method, String url, String data ) {
+
+    /**
+     * Used to send the HTTP request
+     * @param url url to send data to
+     * @param data data to be sent, as JSON
+     * @param productTokenHeader when set: X-CM-ProductToken header
+     * @return the response (when successful)
+     */
+    private static String sendRequest( String url, String data, String productTokenHeader ) {
         HttpURLConnection conn = null;
         try {
             
@@ -15,9 +26,12 @@ public class HttpHelper {
             conn = (HttpURLConnection) obj.openConnection();
             
             //add request header
-            conn.setRequestMethod( method );
+            conn.setRequestMethod("POST");
             
             conn.setRequestProperty( "Content-Type", "application/json" );
+            if (productTokenHeader != null) {
+                conn.setRequestProperty("X-CM-ProductToken", productTokenHeader);
+            }
             
             if ( data != null ) {
                 // Send request    
@@ -46,9 +60,26 @@ public class HttpHelper {
             }
         }
     }
-    
-    // HTTP POST request
-    public static String post( String url, String urlParameters ) {
-        return sendRequest( "POST", url, urlParameters );
+
+
+    /**
+     * HTTP POST request
+     * @param url url to send to
+     * @param requestBody parameters to use
+     * @return JSON result
+     */
+    public static String post( String url, String requestBody ) {
+        return post(url, requestBody, null);
+    }
+
+    /**
+     * HTTP POST request
+     * @param url url to send to
+     * @param requestBody parameters to use
+     * @param productTokenHeader (can be null) when set send this as the product token header
+     * @return JSON result
+     */
+    public static String post( String url, String requestBody, String productTokenHeader ) {
+        return sendRequest(url, requestBody, productTokenHeader );
     }
 }

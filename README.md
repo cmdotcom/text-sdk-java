@@ -13,7 +13,7 @@ You can find our SDK [here](https://mvnrepository.com/artifact/com.cm/text-sdk),
 <dependency>
     <groupId>com.cm</groupId>
     <artifactId>text-sdk</artifactId>
-    <version>2.1.0</version>
+    <version>3.0.0</version>
 </dependency>
 ```
 
@@ -25,16 +25,16 @@ You will have to add GSON manually: https://mvnrepository.com/artifact/com.googl
 ## Instantiate the client
 Use your productToken which authorizes you on the CM platform. Get yours on CM.com
 
-```cs
+```java
 MessagingClient client = new MessagingClient("YourCMProductToken");
 ```
 
 ## Send a message
 By calling `SendTextMessage` and providing message text, sender name, recipient phone number(s).
 
-```cs
+```java
    MessagingClient client = new MessagingClient("YourProductToken");
-      client.sendTextMessage("Message Text", "TestSender", new String[] {"00316012345678"});
+   client.sendTextMessage("Message Text", "TestSender", new String[] {"00316012345678"});
    
 ```
 ## Sending a message with auto detect encoding
@@ -45,7 +45,7 @@ In case it detects characters that are not part of the GSM character set, the me
 
 see our API docs for more info https://developers.cm.com/messaging/
 
-```cs
+```java
  MessagingClient client = new MessagingClient("YourProductToken");
  MessageBuilder builder = new MessageBuilder("Message Text", "auto",  "TestSender", new String[] {"00316012345678"});
       
@@ -56,7 +56,7 @@ see our API docs for more info https://developers.cm.com/messaging/
 
 ## Sending a rich message
 By using the `MessageBuilder` it is possible to create images with media for channels such as WhatsApp and Viber
-```cs
+```java
  MessagingClient client = new MessagingClient("YourProductToken");
 
  MessageBuilder builder = new MessageBuilder("Message Text", "TestSender", new String[] {"00316012345678"});
@@ -76,7 +76,7 @@ By using the `MessageBuilder` it is possible to create images with media for cha
 
 ## Get the result
 Sending an message returns the response body
-```cs
+```java
 {
 	"details": "Created 1 message(s)",
 	"errorCode": 0,
@@ -93,7 +93,7 @@ Sending an message returns the response body
 
 ## Whatsapp Templates
 Send WhatsApp template messages using the message builder please take a look at our documentation in the [Whatsapp templates section](https://developers.cm.com/messaging/docs/whatsapp#template)
-```cs
+```java
 		 
 MessagingClient client = new MessagingClient("YourProductToken");
  
@@ -127,3 +127,21 @@ MessagingClient client = new MessagingClient("YourProductToken");
 ```
 
 
+## Using the OTP API
+Send an OTP code
+```java
+    MessagingClient client = new MessagingClient(yourProductToken);
+
+    OtpRequest request = new OtpRequestBuilder(senderName, recipientNumber)
+    .withMessage("Your OTP code is {code}")
+    .withChannel("sms")
+    .build();
+
+    OtpResponse result = client.sendOtpRequest(request);
+```
+
+Verify the response code
+```java
+    OtpResponse verifyResult = client.verifyOtpRequest(result.getId(), code);
+    verifyResult.isVerified(); //represents whether the check was code was correct  
+```

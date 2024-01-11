@@ -1,13 +1,16 @@
 package com.cm.text.models.multichannel;
 
+/**
+ * Used to define how a carousel should look luike
+ */
 public enum  CarouselCardWidth {
-    /// <summary>
-    ///     Small cards
-    /// </summary>
+    /**
+     * Small
+     */
     Small,
 
-    /// <summary>
-    ///     Medium sized cards
-    /// </summary>
+    /**
+     * Medium-sized cards
+     */
     Medium
 }

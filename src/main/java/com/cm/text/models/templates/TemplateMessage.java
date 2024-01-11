@@ -4,27 +4,36 @@ import com.cm.text.models.multichannel.IRichMessage;
 import com.google.gson.annotations.SerializedName;
 
 public class TemplateMessage implements IRichMessage {
-    /// <summary>
-    /// The Content of the WhatsApp template message
-    /// </summary>
-    /// <remarks>Templates need to be configured by CM and approved by Whatsapp before it is possible
-    /// to send these messages.
-    /// </remarks>
+    /**
+     * The Content of the WhatsApp template message.
+     */
     @SerializedName("template")
-    public TemplateMessageContent Content;
+    private TemplateMessageContent content;
 
-    /// <summary>
-    ///  Default constructor
-    /// </summary>
     public TemplateMessage() {
 
     }
 
-    /// <summary>
-    ///  Constructor which sets values
-    /// </summary>
-    /// <param name="TemplateMessageContent"></param>
+    /**
+     *
+     * @param content The Content of the WhatsApp template message.
+     */
     public TemplateMessage(TemplateMessageContent content) {
-        this.Content = content;
+        this.content = content;
+    }
+
+    /**
+     *
+     * @return The Content of the WhatsApp template message.
+     */
+    public TemplateMessageContent getContent() {
+        return content;
+    }
+
+    /**
+     * @param content The Content of the WhatsApp template message.
+     */
+    public void setContent(TemplateMessageContent content) {
+        this.content = content;
     }
 }

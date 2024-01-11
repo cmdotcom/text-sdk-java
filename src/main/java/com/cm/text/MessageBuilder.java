@@ -13,26 +13,27 @@ import com.cm.text.models.templates.TemplateMessage;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Builder class to construct messages
+ */
 public class MessageBuilder {
 
-    private Message message;
+    private final Message message;
     private RichContent richContent;
 
-
-    /// <summary>
-    ///     Creates a new MessageBuilder
-    /// </summary>
-    /// <param name="messageText"></param>
-    /// <param name="from"></param>
-    /// <param name="to"></param>
+    /**
+     * Creates a new MessageBuilder
+     * @param messageText text to send in the message
+     * @param from sender id
+     * @param to recipients to send the messages towards
+     */
     public MessageBuilder(String messageText, String from,String[] to)
     {
         List<Recipient> recipientList = new ArrayList<>();
         for (String number : to) {
             Recipient r = new Recipient();
-            r.Number = number;
+            r.setNumber(number);
             recipientList.add(r);
-
         }
 
         this.message = new Message(new Body(messageText), from, recipientList);
@@ -44,12 +45,20 @@ public class MessageBuilder {
     /// <param name="messageText"></param>
     /// <param name="from"></param>
     /// <param name="to"></param>
-     public MessageBuilder(String messageText,  String type, String from,String[] to)
+
+    /**
+     *  Creates a new MessageBuilder
+     * @param messageText text to send in the message
+     * @param type encoding to use (use auto for auto detect encoding)
+     * @param from sender id
+     * @param to recipients to send the messages towards
+     */
+    public MessageBuilder(String messageText,  String type, String from,String[] to)
     {
         List<Recipient> recipientList = new ArrayList<>();
         for (String number : to) {
             Recipient r = new Recipient();
-            r.Number = number;
+            r.setNumber(number);
             recipientList.add(r);
 
         }
@@ -57,50 +66,48 @@ public class MessageBuilder {
         this.message = new Message(new Body(messageText, type), from, recipientList);
     }
 
-    /// <summary>
-    ///     Constructs the message.
-    /// </summary>
-    /// <returns></returns>
-    public Message Build()
+    /**
+     * Constructs the message
+     * @return the message to send
+     */
+    public Message build()
     {
-        this.message.RichContent = this.richContent;
+        this.message.setRichContent(this.richContent);
         return this.message;
     }
 
-    /// <summary>
-    ///     Adds the allowed channels field, which forces a message to only use certain routes.
-    ///     You can define a list of which channels you want your message to use.
-    ///     Not defining any channels will be interpreted as allowing all channels.
-    /// </summary>
-    /// <remarks>
-    ///     Note that for channels other than SMS, CM needs to configure the out going flows.
-    ///     For those flows to work, we need to be contacted.
-    /// </remarks>
-    public MessageBuilder WithAllowedChannels(Channel[] channels)
+    /**
+     * Adds the allowed channels field, which forces a message to only use certain routes.
+     *  You can define a list of which channels you want your message to use.
+     *  Not defining any channels will be interpreted as allowing all channels.
+     *  Note that for channels other than SMS, CM needs to configure the out going flows. For those flows to work, we need to be contacted.
+     * @param channels Define the list of which channels you want your message to use
+     * @return this builder, for chaining
+     */
+    public MessageBuilder withAllowedChannels(Channel[] channels)
     {
-        this.message.AllowedChannels = channels;
+        this.message.setAllowedChannels(channels);
         return this;
     }
 
-    /// <summary>
-    ///     Add a reference to the message.
-    /// </summary>
-    /// <param name="reference"></param>
-    /// <returns></returns>
-    public MessageBuilder WithReference(String reference)
+    /**
+     * Add a reference to the message.
+     * @param reference the reference to use
+     * @return this builder, for chaining
+     */
+    public MessageBuilder withReference(String reference)
     {
-        this.message.Reference = reference;
+        this.message.setReference(reference);
         return this;
     }
 
-    /// <summary>
-    ///     Adds a message that replaces the <see cref="Message.Body" /> for channels that support
-    ///     rich content (all channels except <see cref="Channel.SMS" />, <see cref="Channel.Voice" />
-    ///     and <see cref="Channel.Push" /> at this moment)
-    /// </summary>
-    /// <param name="richMessage"></param>
-    /// <returns></returns>
-    public MessageBuilder WithRichMessage(IRichMessage richMessage)
+
+    /**
+     * Adds a message that replaces the body for channels that support rich content
+     * @param richMessage the rich message to add
+     * @return this builder, for chaining
+     */
+    public MessageBuilder withRichMessage(IRichMessage richMessage)
     {
         if (this.richContent == null)
             this.richContent = new RichContent();
@@ -109,22 +116,27 @@ public class MessageBuilder {
         return this;
     }
 
-    /// <summary>
-    ///     Adds suggestions to the message. It is dependent on the channel that is used which
-    ///     suggestions are supported.
-    /// </summary>
-    /// <param name="suggestions"></param>
-    /// <returns></returns>
-    public MessageBuilder WithSuggestions(Suggestion[] suggestions)
+    /**
+     * Adds suggestions to the message. It is dependent on the channel that is used which suggestions are supported.
+     * @param suggestions suggestions to add
+     * @return this builder, for chaining
+     */
+    public MessageBuilder withSuggestions(Suggestion[] suggestions)
     {
         if (this.richContent == null)
             this.richContent = new RichContent();
 
-        this.richContent.Suggestions = suggestions;
+        this.richContent.setSuggestions(suggestions);
         return this;
     }
-    
-    public MessageBuilder WithTemplate(TemplateMessage template){
+
+    /**
+     * Adds a WhatsApp template message that replaces the body for WhatsApp messages
+     * please note that you need to have approved wa templates.
+     * @param template the template to add
+     * @return this builder, for chaining
+     */
+    public MessageBuilder withTemplate(TemplateMessage template){
         if (this.richContent == null)
             this.richContent = new RichContent();           
            
@@ -132,14 +144,14 @@ public class MessageBuilder {
         return this;
     }
 
-    /// <summary>
-    ///     Add a custom DCS
-    /// </summary>
-    /// <param name="dcs"></param>
-    /// <returns></returns>
-    public MessageBuilder WithDcs(int dcs)
+    /**
+     * Adds a custom DCS
+     * @param dcs data coding scheme see <a href="https://developers.cm.com/messaging/docs/sms">Developer docs</a> for more information
+     * @return this builder, for chaining
+     */
+    public MessageBuilder withDcs(int dcs)
     {
-        this.message.Dcs = dcs;
+        this.message.setDcs(dcs);
         return this;
     }
 }

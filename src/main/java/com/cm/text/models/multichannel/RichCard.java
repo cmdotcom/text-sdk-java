@@ -3,15 +3,47 @@ package com.cm.text.models.multichannel;
 import com.google.gson.annotations.SerializedName;
 
 public class RichCard extends TextMessage{
-    // <summary>
-    ///     Optional: the header for a rich card
-    /// </summary>
+    /**
+     * Optional: the header for a rich card
+     */
     @SerializedName("header")
-    public String Header;
+    private String header;
 
-    /// <summary>
-    ///     The image or video of the card.
-    /// </summary>
+    /**
+     * The image or video of the card.
+     */
     @SerializedName("media")
-    public MediaContent Media;
+    private MediaContent media;
+
+    /**
+     *
+     * @return the header for a rich card
+     */
+    public String getHeader() {
+        return header;
+    }
+
+    /**
+     *
+     * @param header the header for a rich card
+     */
+    public void setHeader(String header) {
+        this.header = header;
+    }
+
+    /**
+     *
+     * @return The image or video of the card.
+     */
+    public MediaContent getMedia() {
+        return media;
+    }
+
+    /**
+     *
+     * @param media The image or video of the card.
+     */
+    public void setMedia(MediaContent media) {
+        this.media = media;
+    }
 }

@@ -4,45 +4,77 @@ import com.google.gson.annotations.SerializedName;
 
 public class WhatsAppTemplate {
 
-    /// <summary>
-    /// Source: https://developers.facebook.com/docs/whatsapp/api/messages/message-templates
-    /// The namespace that will be used
-    /// </summary>
+    /**
+     * The namespace that will be used
+     *  Source <a href="https://developers.facebook.com/docs/whatsapp/api/messages/message-templates">Meta developer docs</a>
+     */
     @SerializedName("namespace")
-    public String Namespace;
-    /// <summary>
-    /// Source: https://developers.facebook.com/docs/whatsapp/api/messages/message-templates
-    /// The element name that indicates which template to use within the namespace
-    /// </summary>
+    private String namespace;
+
+    /**
+     * Source  <a href="https://developers.facebook.com/docs/whatsapp/api/messages/message-templates">Meta developer docs</a>
+     */
     @SerializedName("element_name")
-    public String Name;
-    /// <summary>
-    /// Source: https://developers.facebook.com/docs/whatsapp/api/messages/message-templates
-    /// Allows for the specification of a deterministic or fallback language.
-    /// 
-    /// The language parameter sets the language policy for an Message Template;
-    /// you can set it to either fallback or deterministic.
-    /// </summary>
+    private String name;
+
     @SerializedName("language")
-    public TemplateLanguage Language;
-    /// <summary>
-    /// Source: https://developers.facebook.com/docs/whatsapp/api/messages/message-templates
-    /// This field is an array of values to apply to variables in the template
-    /// </summary>
+    private TemplateLanguage language;
+
+    /**
+     * This field is an array of values to apply to variables in the template
+     * Source  <a href="https://developers.facebook.com/docs/whatsapp/api/messages/message-templates">Meta developer docs</a>
+     */
     @SerializedName("localizable_params")
-    public LocalizableParam[] LocalizableParams;
+    private LocalizableParam[] localizableParams;
 
-    /// <summary>
-    /// Source: https://developers.facebook.com/docs/whatsapp/api/messages/message-templates
-    /// This field is an array of values to apply to variables in the template
-    /// </summary>
+    /**
+     * This field is an array of values to apply to variables in the template
+     * Source  <a href="https://developers.facebook.com/docs/whatsapp/api/messages/message-templates">Meta developer docs</a>
+     */
     @SerializedName("components")
-    public TemplateComponents[] Components;
+    private TemplateComponents[] components;
 
-    /// <summary>
-    ///  Default constructor
-    /// </summary>
     public WhatsAppTemplate() {
 
+    }
+
+    public String getNamespace() {
+        return namespace;
+    }
+
+    public void setNamespace(String namespace) {
+        this.namespace = namespace;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public TemplateLanguage getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(TemplateLanguage language) {
+        this.language = language;
+    }
+
+    public LocalizableParam[] getLocalizableParams() {
+        return localizableParams;
+    }
+
+    public void setLocalizableParams(LocalizableParam[] localizableParams) {
+        this.localizableParams = localizableParams;
+    }
+
+    public TemplateComponents[] getComponents() {
+        return components;
+    }
+
+    public void setComponents(TemplateComponents[] components) {
+        this.components = components;
     }
 }

@@ -1,40 +1,113 @@
 package com.cm.text.models;
 
 
+import com.google.gson.annotations.SerializedName;
 
 public class Response {
 
     public static class HttpResponseBody
     {
-        
-        public String details ;
+        @SerializedName("details")
+        private String details;
 
-        
-        public int errorCode ;
+        @SerializedName("errorCode")
+        private int errorCode;
 
-        
-        public ResponseMessageDetail[] messages ;
+        @SerializedName("messages")
+        private ResponseMessageDetail[] messages;
+
+        public String getDetails() {
+            return details;
+        }
+
+        public void setDetails(String details) {
+            this.details = details;
+        }
+
+        public int getErrorCode() {
+            return errorCode;
+        }
+
+        public void setErrorCode(int errorCode) {
+            this.errorCode = errorCode;
+        }
+
+        public ResponseMessageDetail[] getMessages() {
+            return messages;
+        }
+
+        public void setMessages(ResponseMessageDetail[] messages) {
+            this.messages = messages;
+        }
     }
 
-    public class ResponseMessageDetail
+    public static class ResponseMessageDetail
     {
-            
-        public String messageDetails ;
+        @SerializedName("messageDetails")
+        private String messageDetails ;
 
-            
-        public String messageErrorCode;
+        @SerializedName("messageErrorCode")
+        private String messageErrorCode;
 
-            
-        public int parts;
+        @SerializedName("parts")
+        private int parts;
 
-            
-        public String reference;
+        @SerializedName("reference")
+        private String reference;
 
-            
-        public String status;
+        @SerializedName("status")
+        private String status;
 
-            
-        public String to;
+        @SerializedName("to")
+        private String to;
+
+        public String getMessageDetails() {
+            return messageDetails;
+        }
+
+        public void setMessageDetails(String messageDetails) {
+            this.messageDetails = messageDetails;
+        }
+
+        public String getMessageErrorCode() {
+            return messageErrorCode;
+        }
+
+        public void setMessageErrorCode(String messageErrorCode) {
+            this.messageErrorCode = messageErrorCode;
+        }
+
+        public int getParts() {
+            return parts;
+        }
+
+        public void setParts(int parts) {
+            this.parts = parts;
+        }
+
+        public String getReference() {
+            return reference;
+        }
+
+        public void setReference(String reference) {
+            this.reference = reference;
+        }
+
+        public String getStatus() {
+            return status;
+        }
+
+        public void setStatus(String status) {
+            this.status = status;
+        }
+
+        public String getTo() {
+            return to;
+        }
+
+        public void setTo(String to) {
+            this.to = to;
+        }
     }
 
 }
