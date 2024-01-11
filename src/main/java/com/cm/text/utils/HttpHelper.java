@@ -15,15 +15,6 @@ public class HttpHelper {
      * Used to send the HTTP request
      * @param url url to send data to
      * @param data data to be sent, as JSON
-     * @return the response (when successful)
-     */
-    private static String sendRequest( String url, String data ) {
-        return sendRequest(url, data, null);
-    }
-    /**
-     * Used to send the HTTP request
-     * @param url url to send data to
-     * @param data data to be sent, as JSON
      * @param productTokenHeader when set: X-CM-ProductToken header
      * @return the response (when successful)
      */
@@ -74,10 +65,21 @@ public class HttpHelper {
     /**
      * HTTP POST request
      * @param url url to send to
-     * @param urlParameters parameters to use
+     * @param requestBody parameters to use
      * @return JSON result
      */
-    public static String post( String url, String urlParameters ) {
-        return sendRequest(url, urlParameters );
+    public static String post( String url, String requestBody ) {
+        return post(url, requestBody, null);
+    }
+
+    /**
+     * HTTP POST request
+     * @param url url to send to
+     * @param requestBody parameters to use
+     * @param productTokenHeader (can be null) when set send this as the product token header
+     * @return JSON result
+     */
+    public static String post( String url, String requestBody, String productTokenHeader ) {
+        return sendRequest(url, requestBody, productTokenHeader );
     }
 }

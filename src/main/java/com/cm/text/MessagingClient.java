@@ -3,6 +3,9 @@ package com.cm.text;
 import com.cm.text.models.Message;
 import com.cm.text.models.Request;
 import com.cm.text.models.Response;
+import com.cm.text.models.identity.OtpCheck;
+import com.cm.text.models.identity.OtpRequest;
+import com.cm.text.models.identity.OtpResponse;
 import com.cm.text.utils.HttpHelper;
 import com.google.gson.Gson;
 
@@ -40,7 +43,7 @@ public class MessagingClient {
         
         String result = HttpHelper.post( Config.BusinessMessagingApiUrl, body );
         
-        return getResponseBody( result );
+        return getResponseBody( result, Response.HttpResponseBody.class );
     }
 
     /**
@@ -51,17 +54,43 @@ public class MessagingClient {
     public Response.HttpResponseBody sendMessage( Message message ) {
         String body = GetHttpPostBody( productToken, message );
         String result = HttpHelper.post( Config.BusinessMessagingApiUrl, body );
-        return getResponseBody( result );
+        return getResponseBody( result, Response.HttpResponseBody.class );
     }
+
+    /**
+     * Sends a One Time Password
+     * @param request The request to send
+     * @return response with the identifier to use during verification
+     */
+    public OtpResponse sendOtpRequest(OtpRequest request) {
+        String body = GetHttpPostBody(request);
+        String result = HttpHelper.post(Config.OtpRequestEndpoint, body, productToken);
+
+        return getResponseBody(result, OtpResponse.class);
+    }
+
+
+    public OtpResponse verifyOtpRequest(String id, String code) {
+        return verifyOtpRequest(new OtpCheck(id, code));
+    }
+
+    public OtpResponse verifyOtpRequest(OtpCheck otpCheck) {
+        String body = GetHttpPostBody(otpCheck);
+        String url = String.format(Config.OtpVerifyEndpointFormatter, otpCheck.getId());
+        String result = HttpHelper.post(url, body, productToken);
+
+        return getResponseBody(result, OtpResponse.class);
+    }
+
 
     /**
      * Gets the HTTP post response as an object.
      * @param body JSON input
      * @return Result object
      */
-    protected static Response.HttpResponseBody getResponseBody( String body ) {
+    protected static <T> T getResponseBody( String body, Class<T> classOfT ) {
         try {
-            return new Gson().fromJson( body, Response.HttpResponseBody.class );
+            return new Gson().fromJson( body, classOfT );
         }
         catch ( Exception e ) {
             throw new RuntimeException( "Invalid json response-body", e );
@@ -83,6 +112,24 @@ public class MessagingClient {
         messages.setMessages( request );
         try {
             return new Gson().toJson( messages );
+        }
+        catch ( Exception e ) {
+            throw new RuntimeException( "Invalid request body", e );
+        }
+    }
+
+    protected static String GetHttpPostBody( OtpRequest request ) {
+        try {
+            return new Gson().toJson( request );
+        }
+        catch ( Exception e ) {
+            throw new RuntimeException( "Invalid request body", e );
+        }
+    }
+
+    protected static String GetHttpPostBody( OtpCheck request ) {
+        try {
+            return new Gson().toJson( request );
         }
         catch ( Exception e ) {
             throw new RuntimeException( "Invalid request body", e );
