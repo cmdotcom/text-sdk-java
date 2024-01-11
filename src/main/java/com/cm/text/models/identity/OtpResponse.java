@@ -1,8 +1,7 @@
 package com.cm.text.models.identity;
 
 import com.google.gson.annotations.SerializedName;
-
-import java.time.LocalDateTime;
+import java.util.Date;
 
 public class OtpResponse {
     /**
@@ -26,13 +25,13 @@ public class OtpResponse {
      * The date the OTP was created.
      */
     @SerializedName("createdAt")
-    private LocalDateTime createdAt;
+    private Date createdAt;
 
     /**
      * The date the OTP will expire.
      */
     @SerializedName("expiresAt")
-    private LocalDateTime expiresAt;
+    private Date expiresAt;
 
     /**
      * @return The identifier of the OTP, should be used to verify.
@@ -82,7 +81,7 @@ public class OtpResponse {
     /**
      * @return The date the OTP was created.
      */
-    public LocalDateTime getCreatedAt() {
+    public Date getCreatedAt() {
         return createdAt;
     }
 
@@ -90,21 +89,21 @@ public class OtpResponse {
     /**
      * @param createdAt The date the OTP was created.
      */
-    public void setCreatedAt(LocalDateTime createdAt) {
+    public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
 
     /**
      * @return The date the OTP will expire.
      */
-    public LocalDateTime getExpiresAt() {
+    public Date getExpiresAt() {
         return expiresAt;
     }
 
     /**
      * @param expiresAt The date the OTP will expire.
      */
-    public void setExpiresAt(LocalDateTime expiresAt) {
+    public void setExpiresAt(Date expiresAt) {
         this.expiresAt = expiresAt;
     }
 }

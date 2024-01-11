@@ -21,6 +21,13 @@ public class OtpRequestBuilder {
     }
 
     /**
+     * @return gets the otp request.
+     */
+    public OtpRequest build() {
+        return otpRequest;
+    }
+
+    /**
      * @param channel The channel to send the code.
      * Supported values: auto, sms, push, whatsapp, voice, email.
      * Channel auto is only available with a SOLiD subscription.

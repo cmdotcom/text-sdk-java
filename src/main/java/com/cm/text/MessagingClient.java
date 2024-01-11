@@ -81,7 +81,7 @@ public class MessagingClient {
 
     /**
      * Checks one otp request
-     * @param otpCheck the id and code of the check
+     * @param otpCheck the id and code to check
      * @return the result of the check
      */
     public OtpResponse verifyOtpRequest(OtpCheck otpCheck) {

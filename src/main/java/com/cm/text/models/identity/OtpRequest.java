@@ -37,7 +37,7 @@ public class OtpRequest {
      * Channel auto is only available with a SOLiD subscription.
      */
     @SerializedName("channel")
-    private String channel = "sms";
+    private String channel;
 
     /**
      * The locale, for WhatsApp supported values: en, nl, fr, de, it, es.
@@ -63,6 +63,10 @@ public class OtpRequest {
      */
     @SerializedName("message")
     private String message;
+
+    public OtpRequest() {
+        channel = "sms";
+    }
 
     /**
      * @return This is the sender name.

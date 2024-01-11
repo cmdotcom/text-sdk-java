@@ -128,18 +128,20 @@ MessagingClient client = new MessagingClient("YourProductToken");
 
 
 ## Using the OTP API
-Send a simple OTP code
+Send an OTP code
 ```java
-    MessagingClient client = new MessagingClient("YourProductToken");
-    client.sendOtp("Sender", "316012345678", "sms");
+    MessagingClient client = new MessagingClient(yourProductToken);
+
+    OtpRequest request = new OtpRequestBuilder(senderName, recipientNumber)
+    .withMessage("Your OTP code is {code}")
+    .withChannel("sms")
+    .build();
+
+    OtpResponse result = client.sendOtpRequest(request);
 ```
 
 Verify the response code
 ```java
-    client.verifyOtp("OTP-ID", "code")
-```
-
-More advanced scenarios
-```java		 
-    MessagingClient client = new MessagingClient("YourProductToken");
+    OtpResponse verifyResult = client.verifyOtpRequest(result.getId(), code);
+    verifyResult.isVerified(); //represents whether the check was code was correct  
 ```
