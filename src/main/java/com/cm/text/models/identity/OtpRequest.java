@@ -69,8 +69,8 @@ public class OtpRequest {
     }
 
     /**
+     * The sender name The maximum length is 11 alphanumerical characters or 16 digits. Example: 'MyCompany'
      * @return This is the sender name.
-     * The maximum length is 11 alphanumerical characters or 16 digits. Example: 'MyCompany'
      */
     public String getFrom() {
         return from;
@@ -85,7 +85,7 @@ public class OtpRequest {
     }
 
     /**
-     *
+     * The destination mobile number.
      * @return The destination mobile number.
      */
     public String getTo() {
@@ -93,7 +93,7 @@ public class OtpRequest {
     }
 
     /**
-     * Required: The destination mobile number.
+     *  Required: The destination mobile number.
      *  This value should be in international format. single mobile number per request. Example: '+316012345678'
      * @param to This value should be in international format. single mobile number per request. Example: '+316012345678'
      */
@@ -102,6 +102,7 @@ public class OtpRequest {
     }
 
     /**
+     * The length of the code (min 4, max 10). default: 5.
      * @return The length of the code (min 4, max 10). default: 5.
      */
     public Integer getDigits() {
@@ -109,6 +110,7 @@ public class OtpRequest {
     }
 
     /**
+     * The length of the code (min 4, max 10). default: 5.
      * @param digits The length of the code (min 4, max 10). default: 5.
      */
     public void setDigits(Integer digits) {
@@ -116,6 +118,7 @@ public class OtpRequest {
     }
 
     /**
+     * The expiry in seconds (min 10, max 3600). default (when null): 60 seconds.
      * @return The expiry in seconds (min 10, max 3600). default (when null): 60 seconds.
      */
     public Integer getExpiry() {
@@ -123,6 +126,7 @@ public class OtpRequest {
     }
 
     /**
+     * The expiry in seconds (min 10, max 3600). (default: 60 seconds.)
      * @param expiry The expiry in seconds (min 10, max 3600). (default: 60 seconds.)
      */
     public void setExpiry(Integer expiry) {
@@ -140,9 +144,10 @@ public class OtpRequest {
     }
 
     /**
+     * The channel to send the code.
+     *      Supported values: auto, sms, push, whatsapp, voice, email.
+     *      Channel auto is only available with a SOLiD subscription.
      * @param channel The channel to send the code.
-     * Supported values: auto, sms, push, whatsapp, voice, email.
-     * Channel auto is only available with a SOLiD subscription.
      */
     public void setChannel(String channel) {
         this.channel = channel;
