@@ -47,7 +47,7 @@ public class Response {
         private String messageDetails ;
 
         @SerializedName("messageErrorCode")
-        private String messageErrorCode;
+        private int messageErrorCode;
 
         @SerializedName("parts")
         private int parts;
@@ -69,11 +69,11 @@ public class Response {
             this.messageDetails = messageDetails;
         }
 
-        public String getMessageErrorCode() {
+        public int getMessageErrorCode() {
             return messageErrorCode;
         }
 
-        public void setMessageErrorCode(String messageErrorCode) {
+        public void setMessageErrorCode(int messageErrorCode) {
             this.messageErrorCode = messageErrorCode;
         }
 
