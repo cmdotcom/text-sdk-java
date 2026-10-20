@@ -13,7 +13,7 @@ You can find our SDK [here](https://mvnrepository.com/artifact/com.cm/text-sdk),
 <dependency>
     <groupId>com.cm</groupId>
     <artifactId>text-sdk</artifactId>
-    <version>3.0.0</version>
+    <version>3.0.1</version>
 </dependency>
 ```
 
