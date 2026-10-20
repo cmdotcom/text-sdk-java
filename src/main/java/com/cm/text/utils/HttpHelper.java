@@ -52,7 +52,8 @@ public class HttpHelper {
             return response.toString();
         }
         catch ( Exception e ) {
-            throw new RuntimeException( String.format( "Error sending request to url: %s with data: %s", url, data ), e );
+            // Never include the request body here: it contains the product token, recipients and message content
+            throw new RuntimeException( String.format( "Error sending request to url: %s", url ), e );
         }
         finally {
             if ( conn != null ) {
