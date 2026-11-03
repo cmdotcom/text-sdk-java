@@ -102,7 +102,7 @@ public class Message {
      *     The given reference will be used in the status reports and MO replies for the message,
      *     so you can link the messages to the message that was sent.
      *     For more information on status reports, see:
-     *     <a href="https://developers.cm.com/messaging/docs/incoming-status-report">Developer docs</a>
+     *     <a href="https://docs.cm.com/messaging/business-messaging/status-reports">Developer docs</a>
      *     The given reference must be between 1 - 32 alphanumeric characters.
      */
     @SerializedName("reference")
@@ -120,7 +120,7 @@ public class Message {
      *     or a relative offset. A message is considered failed if it was not successfully delivered before that time.
      *     And via a Status Report we inform you this was the case.
      *     For more information on status reports, see:
-     *     <a href="https://developers.cm.com/messaging/docs/incoming-status-report">Status report developer docs</a>
+     *     <a href="https://docs.cm.com/messaging/business-messaging/status-reports">Status report developer docs</a>
      *     You can supply the time zone for the validity period using either of the following formats:
      *     Absolute date and time:
      *     2017-04-20 11:50:05 GMT
@@ -138,7 +138,7 @@ public class Message {
     /**
      * Optional: If you set DCS to '0' or do not include the parameter, the messages uses standard GSM encoding.
      * To set your message up for unicode messaging set the value of dcs to 8
-     * <a href="https://developers.cm.com/messaging/docs/sms#custom-dcs">DCS</a>
+     * <a href="https://docs.cm.com/messaging/sms#custom-dcs">DCS</a>
      */
     @SerializedName("dcs")
     private int dcs = 0;
@@ -357,7 +357,7 @@ public class Message {
      *      The given reference will be used in the status reports and MO replies for the message,
      *      so you can link the messages to the message that was sent.
      *      For more information on status reports, see:
-     *      <a href="https://developers.cm.com/messaging/docs/incoming-status-report">Developer docs</a>
+     *      <a href="https://docs.cm.com/messaging/business-messaging/status-reports">Developer docs</a>
      */
     public String getReference() {
         return reference;
@@ -369,7 +369,7 @@ public class Message {
      *      The given reference will be used in the status reports and MO replies for the message,
      *      so you can link the messages to the message that was sent.
      *      For more information on status reports, see:
-     *      <a href="https://developers.cm.com/messaging/docs/incoming-status-report">Developer docs</a>
+     *      <a href="https://docs.cm.com/messaging/business-messaging/status-reports">Developer docs</a>
      */
     public void setReference(String reference) {
         this.reference = reference;
@@ -380,7 +380,7 @@ public class Message {
      * or a relative offset. A message is considered failed if it was not successfully delivered before that time.
      * And via a Status Report we inform you this was the case.
      * For more information on status reports, see:
-     * <a href="https://developers.cm.com/messaging/docs/incoming-status-report">Status report developer docs</a>
+     * <a href="https://docs.cm.com/messaging/business-messaging/status-reports">Status report developer docs</a>
      * You can supply the time zone for the validity period using either of the following formats:
      * Absolute date and time:
      * 2017-04-20 11:50:05 GMT
@@ -401,7 +401,7 @@ public class Message {
      * or a relative offset. A message is considered failed if it was not successfully delivered before that time.
      * And via a Status Report we inform you this was the case.
      * For more information on status reports, see:
-     * <a href="https://developers.cm.com/messaging/docs/incoming-status-report">Status report developer docs</a>
+     * <a href="https://docs.cm.com/messaging/business-messaging/status-reports">Status report developer docs</a>
      * You can supply the time zone for the validity period using either of the following formats:
      * Absolute date and time:
      * 2017-04-20 11:50:05 GMT
@@ -434,7 +434,7 @@ public class Message {
     /**
      * @return If you set DCS to '0' or do not include the parameter, the messages uses standard GSM encoding.
      * To set your message up for unicode messaging set the value of dcs to 8
-     * <a href="https://developers.cm.com/messaging/docs/sms#custom-dcs">DCS</a>
+     * <a href="https://docs.cm.com/messaging/sms#custom-dcs">DCS</a>
      */
     public int getDcs() {
         return dcs;
@@ -443,7 +443,7 @@ public class Message {
     /**
      * @param dcs If you set DCS to '0' or do not include the parameter, the messages uses standard GSM encoding.
      * To set your message up for unicode messaging set the value of dcs to 8
-     * <a href="https://developers.cm.com/messaging/docs/sms#custom-dcs">DCS</a>
+     * <a href="https://docs.cm.com/messaging/sms#custom-dcs">DCS</a>
      */
     public void setDcs(int dcs) {
         this.dcs = dcs;

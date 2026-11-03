@@ -2,7 +2,7 @@
 ## @cmdotcom/text-sdk: A helper library to send messages.
 
 Want to send messages in your Java application? Then you are at the right place.
-If you want to get all the functionalities, go to: [CM.com API Docs](https://developers.cm.com/messaging)
+If you want to get all the functionalities, go to: [CM.com API Docs](https://docs.cm.com/messaging)
 
 
 ## Installing
@@ -43,7 +43,7 @@ By using the `MessageBuilder` it is possible to send messages with auto detect e
 It is possible to let our gateway detect the encoding for you by including the type: auto setting. 
 In case it detects characters that are not part of the GSM character set, the message will be delivered as Unicode.
 
-see our API docs for more info https://developers.cm.com/messaging/
+see our API docs for more info https://docs.cm.com/messaging
 
 ```java
  MessagingClient client = new MessagingClient("YourProductToken");
@@ -92,7 +92,7 @@ Sending an message returns the response body
 ```
 
 ## Whatsapp Templates
-Send WhatsApp template messages using the message builder please take a look at our documentation in the [Whatsapp templates section](https://developers.cm.com/messaging/docs/whatsapp#template)
+Send WhatsApp template messages using the message builder please take a look at our documentation in the [Whatsapp templates section](https://docs.cm.com/messaging/whatsapp/whatsapp-templates)
 ```java
 		 
 MessagingClient client = new MessagingClient("YourProductToken");

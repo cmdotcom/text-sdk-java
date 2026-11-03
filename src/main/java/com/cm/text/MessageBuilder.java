@@ -146,7 +146,7 @@ public class MessageBuilder {
 
     /**
      * Adds a custom DCS
-     * @param dcs data coding scheme see <a href="https://developers.cm.com/messaging/docs/sms">Developer docs</a> for more information
+     * @param dcs data coding scheme see <a href="https://docs.cm.com/messaging/sms">Developer docs</a> for more information
      * @return this builder, for chaining
      */
     public MessageBuilder withDcs(int dcs)
